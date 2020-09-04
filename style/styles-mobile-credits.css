@@ -1,0 +1,62 @@
+@media only screen and (max-device-width: 1024px) { 
+
+}
+
+@media only screen and (max-device-width: 900px) { 
+
+}
+
+@media only screen and (max-device-width: 800px) { 
+
+}
+
+@media only screen and (max-device-width: 600px) { 
+
+}
+
+@media only screen and (max-device-width: 500px) { 
+
+}
+
+@media only screen and (max-device-width: 425px) { 
+
+    html, body {
+        width: 100%;
+    }
+    
+
+}
+
+@media only screen and (max-device-width: 400px) { 
+
+    .credits-header {
+        width: 90%;
+    }
+
+    .cast-and-crew {
+        width: 90%;
+    }
+
+    .credits-person a img {
+        width: 100%;
+        height: auto;
+    }
+
+    .top-crew-name {
+        margin: 10px;
+    }
+
+    .character-name {
+        width: 100%;
+        margin: 10px;
+    }
+
+}
+
+@media only screen and (max-device-width: 360px) { 
+
+}
+
+@media only screen and (max-device-width: 320px) { 
+
+}

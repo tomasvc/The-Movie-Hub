@@ -1,0 +1,336 @@
+
+
+
+@media only screen and (max-device-width: 1024px) { 
+
+    .chart-list {
+        width: 100%;
+        margin: 80px auto;
+    }
+
+    .chart-list ul {
+        width: 95%;
+        margin-bottom: 20px;
+    }
+
+    .chart-list ul h4 {
+        font-size: 24px;
+    }
+
+    .charts-list-poster {
+        width: 120px;
+        height: auto;
+    }
+
+    #charts-list-item {
+        width: 300px;
+        height: inherit;
+    }
+
+    .charts-list-title {
+        position: absolute;
+        display: inline-block;
+        font-size: 16px;
+        top: 0;
+    }
+
+    .charts-list-score {
+        position: absolute;
+        display: inline-block;
+        margin: 0;
+        padding: 5px 0;
+        z-index: 1;
+    }
+
+    #charts-list-star, .charts-list-score span {
+        font-size: 14px;
+    }
+
+    .page-nav {
+        margin-left: 3%;
+    }
+
+}
+
+
+@media only screen and (max-device-width: 900px) {
+
+    .chart-list{
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .chart-list ul {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        margin-top: 60px;
+        margin-bottom: 15px;
+    }
+
+    .charts-list-header {
+        display: block;
+        margin-left: 12px;
+    }
+
+    .charts-list-poster {
+        width: 150px;
+        height: auto;
+    }
+
+    .charts-list-title {
+        position: absolute;
+        display: inline-block;
+        font-size: 16px;
+        left: 150px;
+    }
+
+    .charts-list-score {
+        position: absolute;
+        display: inline-block;
+        left: 150px;
+        margin: 0;
+        padding: 5px 0;
+        z-index: 1;
+    }
+
+    #charts-list-star, .charts-list-score span {
+        font-size: 14px;
+    }
+
+    #charts-list-item {
+        width: 300px;
+        height: auto;
+    }
+
+    .page-nav {
+        margin-left: 11%;
+    }
+
+}
+
+
+@media only screen and (max-device-width: 800px) { 
+
+    .chart-list {
+        width: 100%;
+        margin: auto;
+        margin-top: 70px;
+    }
+
+    .chart-list ul {
+        width: 90%;
+    }
+
+    .charts-list-header span {
+        font-size: 22px;
+    }
+
+    #charts-list-item {
+        width: 49%;
+        height: auto;
+    }
+
+    .charts-list-poster {
+        width: 130px;
+        height: auto;
+    }
+
+    .charts-list-title {
+        position: absolute;
+        display: inline-block;
+        font-size: 16px;
+        top: 0;
+        left: 127px;
+    }
+
+    .charts-list-score {
+        position: absolute;
+        display: inline-block;
+        left: 127px;
+    }
+
+    #charts-list-star, .charts-list-score span {
+        font-size: 14px;
+    }
+
+    .page-nav {
+        margin-left: 6%;
+    }
+
+}
+
+@media only screen and (max-device-width: 600px) {
+
+    .chart-list ul {
+        width: 100%;
+    }
+
+}
+
+
+@media only screen and (max-device-width: 500px) { 
+
+    body, html {
+        width: 100%;
+    }
+
+    .chart-list {
+        width: 100%;
+        margin: auto;
+        margin-top: 100px;
+    }
+
+    .chart-list ul {
+        height: auto;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .chart-list ul h4 {
+        margin-left: 10px;
+    }
+
+    .charts-list-poster {
+        width: 100%;
+    }
+
+    #charts-list-item {
+        height: auto;
+        width: 49%;
+    }
+
+    .charts-list-title {
+        display: none;
+    }
+
+    .charts-list-score {
+        position: relative;
+        display: block;
+        left: 0;
+    }
+
+    #charts-list-star, .charts-list-score span {
+        font-size: 18px;
+    }
+
+}
+
+
+@media only screen and (max-device-width: 420px) {
+
+    .chart-list {
+        margin: auto;
+        margin-top: 100px;
+    }
+
+    .charts-list-header span {
+        font-size: 20px;
+    }
+
+    .charts-list-poster {
+        width: 100%;
+        height: auto;
+    }
+
+    #charts-list-item {
+        width: 49%;
+    }
+
+}
+
+
+@media only screen and (max-device-width: 400px) {
+
+    .chart-list {
+        width: 100%;
+        margin: auto;
+        margin-top: 100px;
+    }
+
+    .chart-kist ul {
+        margin: auto;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .charts-list-header {
+        display: block;
+        margin-left: 12px;
+    }
+
+    .charts-list-poster {
+        width: 100%;
+        height: auto;
+    }
+
+    .charts-list-title {
+        display: none;
+        font-size: 20px;
+        top: 225px;
+    }
+
+    .charts-list-score {
+        display: block;
+        padding: 5px 0;
+        z-index: 1;
+    }
+
+    #charts-list-star, .charts-list-score span {
+        font-size: 15px;
+    }
+
+    #charts-list-item {
+        display: inline-block;
+        height: auto;
+        width: 48.8%;
+    }
+
+}
+
+
+@media only screen and (max-device-width: 360px) {
+
+    .charts-list-poster {
+        width: 100%;
+        height: auto;
+    }
+
+    #charts-list-item {
+        width: 48.5%;
+        height: auto;
+    }
+
+    .chart-list ul h4 {
+        font-size: 20px;
+    }
+
+}
+
+
+@media only screen and (max-device-width: 320px) {
+
+    .chart-list ul {
+        margin: auto;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .charts-list-poster {
+        width: 100%;
+        height: auto;
+    }
+
+    #charts-list-item {
+        display: inline-block;
+        width: 48.5%;
+        height: auto;
+    }
+
+    #charts-list-star, .charts-list-score span {
+        font-size: 12px;
+    }
+
+}

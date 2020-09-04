@@ -2,6 +2,144 @@ $(document).ready(() => {
     getMovies();
 });
 
+function getTrendingMovieCharts(x) {
+
+    $(".chart-list").html("");
+
+    axios.get('https://api.themoviedb.org/3/movie/popular?page=' + x + '&language=en-US&region=US&api_key=4f3fdbd8c5943719506e53611dd7be34')
+    .then((response) => {
+
+        var list = `<ul>`;
+        list += `<h4>Trending</h4>`;
+        let word = "";
+
+        for (i = 0; i <= response.data.results.length-1; i++) {
+
+            if (response.data.results[i].vote_count == 1) {
+                word = "vote";
+            } else {
+                word = "votes";
+            }
+
+            list += `<a onclick="movieSelected(${response.data.results[i].id})" href='#'><li id="charts-list-item"><img class="charts-list-poster" src='${response.data.results[i].poster_path != null ? "https://image.tmdb.org/t/p/w200" + response.data.results[i].poster_path : "img/poster-blank.jpg"}'>`;
+            list += `<p class="charts-list-title">${response.data.results[i].title}</p>`;
+            list += `<div class="charts-list-score"><i id="charts-list-star" class="fas fa-star"></i><span class="vote-average">${response.data.results[i].vote_average}</span><span class="vote-count">(${response.data.results[i].vote_count + ' ' + word})</span></div></li></a>`;
+        }
+
+        list += `</ul>`;
+
+        list += `<div class="page-nav">`
+        list += `<p>Page ${response.data.page} out of ${response.data.total_pages}</p>`;
+
+        if (x == 1 && response.data.total_pages > 1) {
+            list += `<a href="#" onclick="getTrendingMovieCharts(${x+1})">Next page</a>`;
+        } else if (x > 1 && response.data.total_pages > 1) {
+            list += `<a href="#" onclick="getTrendingMovieCharts(${x-1})">Previous page</a>`;
+            list += `<a href="#" onclick="getTrendingMovieCharts(${x+1})">Next page</a>`;
+        } else {
+            list += `<a href="#" onclick="getTrendingMovieCharts(${x-1})">Previous page</a>`;
+        }
+
+        list += `</div>`;
+
+        $(".chart-list").append(list);
+
+    });
+
+}
+
+function getPlayingMovieCharts(x) {
+
+    $(".chart-list").html("");
+
+    axios.get('https://api.themoviedb.org/3/movie/now_playing?page=' + x + '&language=en-US&region=US&api_key=4f3fdbd8c5943719506e53611dd7be34')
+    .then((response) => {
+
+        var list = `<ul>`;
+        list += `<h4>Now playing</h4>`;
+        let word = "";
+
+        for (i = 0; i <= response.data.results.length-1; i++) {
+
+            if (response.data.results[i].vote_count == 1) {
+                word = "vote";
+            } else {
+                word = "votes";
+            }
+
+            list += `<a onclick="movieSelected(${response.data.results[i].id})" href='#'><li id="charts-list-item"><img class="charts-list-poster" src='${response.data.results[i].poster_path != null ? "https://image.tmdb.org/t/p/w200" + response.data.results[i].poster_path : "img/poster-blank.jpg"}'>`;
+            list += `<p class="charts-list-title">${response.data.results[i].title}</p>`;
+            list += `<div class="charts-list-score"><i id="charts-list-star" class="fas fa-star"></i><span class="vote-average">${response.data.results[i].vote_average}</span><span class="vote-count">(${response.data.results[i].vote_count + ' ' + word})</span></div></li></a>`;
+        }
+
+        list += `</ul>`;
+
+        list += `<div class="page-nav">`
+        list += `<p>Page ${response.data.page} out of ${response.data.total_pages}</p>`;
+
+        if (x == 1 && response.data.total_pages > 1) {
+            list += `<a href="#" onclick="getPlayingMovieCharts(${x+1})">Next page</a>`;
+        } else if (x > 1 && response.data.total_pages > 1) {
+            list += `<a href="#" onclick="getPlayingMovieCharts(${x-1})">Previous page</a>`;
+            list += `<a href="#" onclick="getPlayingMovieCharts(${x+1})">Next page</a>`;
+        } else {
+            list += `<a href="#" onclick="getPlayingMovieCharts(${x-1})">Previous page</a>`;
+        }
+
+        list += `</div>`;
+
+        $(".chart-list").append(list);
+
+    });
+
+}
+
+function getUpcomingMovieCharts(x) {
+
+    $(".chart-list").html("");
+
+    axios.get('https://api.themoviedb.org/3/movie/upcoming?page=' + x + '&language=en-US&region=US&api_key=4f3fdbd8c5943719506e53611dd7be34')
+    .then((response) => {
+
+        var list = `<ul>`;
+        list += `<h4>Upcoming</h4>`;
+        let word = "";
+
+        for (i = 0; i <= response.data.results.length-1; i++) {
+
+            if (response.data.results[i].vote_count == 1) {
+                word = "vote";
+            } else {
+                word = "votes";
+            }
+
+            list += `<a onclick="movieSelected(${response.data.results[i].id})" href='#'><li id="charts-list-item"><img class="charts-list-poster" src='${response.data.results[i].poster_path != null ? "https://image.tmdb.org/t/p/w200" + response.data.results[i].poster_path : "img/poster-blank.jpg"}'>`;
+            list += `<p class="charts-list-title">${response.data.results[i].title}</p>`;
+            list += `<div class="charts-list-score"><i id="charts-list-star" class="fas fa-star"></i><span class="vote-average">${response.data.results[i].vote_average}</span><span class="vote-count">(${response.data.results[i].vote_count + ' ' + word})</span></div></li></a>`;
+        }
+
+        list += `</ul>`;
+
+        list += `<div class="page-nav">`
+        list += `<p>Page ${response.data.page} out of ${response.data.total_pages}</p>`;
+
+        if (x == 1 && response.data.total_pages > 1) {
+            list += `<a href="#" onclick="getUpcomingMovieCharts(${x+1})">Next page</a>`;
+        } else if (x > 1 && response.data.total_pages > 1) {
+            list += `<a href="#" onclick="getUpcomingMovieCharts(${x-1})">Previous page</a>`;
+            list += `<a href="#" onclick="getUpcomingMovieCharts(${x+1})">Next page</a>`;
+        } else {
+            list += `<a href="#" onclick="getUpcomingMovieCharts(${x-1})">Previous page</a>`;
+        }
+
+        list += `</div>`;
+
+        $(".chart-list").append(list);
+
+    });
+
+}
+
 function getMovies() {
 
 
@@ -15,16 +153,24 @@ function getMovies() {
     .then((response) => {
 
         var trending = '<ul>';
+        let word = "";
                     
-        for (i = 0; i <= 4; i++) {
+        for (i = 0; i <= 7; i++) {
+
+            if (response.data.results[i].vote_count == 1) {
+                word = "vote";
+            } else {
+                word = "votes";
+            }
             
-            trending += `<li><a onclick="movieSelected(${response.data.results[i].id})" href='#'><img onlick="movieSelected(${response.data.results[i].id} class="charts-poster" src='https://image.tmdb.org/t/p/w200${response.data.results[i].poster_path}' height='170'></a>`; 
-            trending += `<a onclick="movieSelected(${response.data.results[i].id})" href='#'>${response.data.results[i].title}</a>`;
-            trending += `<div><i class="fas fa-star chart-star"></i><span class="vote-average">${response.data.results[i].vote_average}</span><span class="vote-count">(${response.data.results[i].vote_count} votes)</span></div></li>`;
+            trending += `<a onclick="movieSelected(${response.data.results[i].id})" href='#'><li id="charts-item"><img onlick="movieSelected(${response.data.results[i].id})" class="charts-poster" src='https://image.tmdb.org/t/p/w200${response.data.results[i].poster_path}'>`;
+            trending += `<p class="charts-title">${response.data.results[i].title}</p>`; 
+            trending += `<div class="charts-score"><i id="charts-star" class="fas fa-star"></i><span class="vote-average">${response.data.results[i].vote_average}</span><span class="vote-count">(${response.data.results[i].vote_count + " " + word})</span></div></li></a>`;
                         
         }
                     
         trending += '</ul>';
+        trending += '<a href="trending.html" class="charts-more">More trending ></a>';
                     
         $(".trending").append(trending);
 
@@ -35,18 +181,27 @@ function getMovies() {
 
     axios.get('https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&region=US&api_key=4f3fdbd8c5943719506e53611dd7be34')
     .then((response) => {
+
         var now_playing = `<ul>`;
+        let word = "";
                     
-        for (i = 0; i <= 4; i++) {
+        for (i = 0; i <= 7; i++) {
+
+            if (response.data.results[i].vote_count == 1) {
+                word = "vote";
+            } else {
+                word = "votes";
+            }
             
-            now_playing += `<li><a onclick="movieSelected(${response.data.results[i].id})" href='#'><img class="charts-poster" src='https://image.tmdb.org/t/p/w200${response.data.results[i].poster_path}' height='170'></a>`;
-            now_playing += `<a onclick="movieSelected(${response.data.results[i].id})" href='#'>${response.data.results[i].title}</a>`;
-            now_playing += `<div><i class="fas fa-star chart-star"></i><span class="vote-average">${response.data.results[i].vote_average}</span><span class="vote-count">(${response.data.results[i].vote_count} votes)</span></div></li>`;
+            now_playing += `<a onclick="movieSelected(${response.data.results[i].id})" href='#'><li id="charts-item"><img class="charts-poster" src='https://image.tmdb.org/t/p/w200${response.data.results[i].poster_path}'>`;
+            now_playing += `<p class="charts-title">${response.data.results[i].title}</p>`; 
+            now_playing += `<div class="charts-score"><i id="charts-star" class="fas fa-star"></i><span class="vote-average">${response.data.results[i].vote_average}</span><span class="vote-count">(${response.data.results[i].vote_count + " " + word})</span></div></li></a>`;
             chart2.push(response.data.results[i].id);
                         
         }
                     
         now_playing += `</ul>`;
+        now_playing += '<a href="now_playing.html" class="charts-more">More playing ></a>'
                     
         $(".now-playing").append(now_playing);
 
@@ -59,17 +214,25 @@ function getMovies() {
     .then((response) => {
 
         var upcoming = ``;
+        let word = "";
         upcoming += `<ul>`;
         
-        for(let i = 0; i <= 4; i++) {
+        for(let i = 0; i <= 7; i++) {
+
+            if (response.data.results[i].vote_count == 1) {
+                word = "vote";
+            } else {
+                word = "votes";
+            }
                 
-                upcoming += `<li><a onclick="movieSelected(${response.data.results[i].id})" href='#'><img class="charts-poster" src='https://image.tmdb.org/t/p/w200${response.data.results[i].poster_path}' height='170'></a>`;
-                upcoming += `<a onclick="movieSelected(${response.data.results[i].id})" href='#'>${response.data.results[i].title}</a>`;
-                upcoming += `<div><i class="fas fa-star chart-star"></i><span class="vote-average">${response.data.results[i].vote_average}</span><span class="vote-count">(${response.data.results[i].vote_count} votes)</span></div></li>`;
-                chart3.push(response.data.results[i].id);                
+            upcoming += `<a onclick="movieSelected(${response.data.results[i].id})" href='#'><li id="charts-item"><img class="charts-poster" src='https://image.tmdb.org/t/p/w200${response.data.results[i].poster_path}'>`;
+            upcoming += `<p class="charts-title">${response.data.results[i].title}</p>`; 
+            upcoming += `<div class="charts-score"><i id="charts-star" class="fas fa-star"></i><span class="vote-average">${response.data.results[i].vote_average}</span><span class="vote-count">(${response.data.results[i].vote_count + " " + word})</span></div></li></a>`;
+            chart3.push(response.data.results[i].id);                
         }
                     
         upcoming += `</ul>`;
+        upcoming += '<a href="upcoming.html" class="charts-more">More upcoming ></a>'
                     
         $(".upcoming").append(upcoming);
 
@@ -82,6 +245,12 @@ function getMovies() {
 function movieSelected(id) {
     sessionStorage.setItem('movieId', id);
     window.location = 'movie.html';
+    return false;
+}
+
+function creditsSelected(id) {
+    sessionStorage.setItem('movieId', id);
+    window.location = 'movie_credits.html';
     return false;
 }
 
@@ -108,19 +277,27 @@ function getMovie() {
         genres += `</ul>`;
 
         let string = ``;
+        let word = "";
+
+        if (movie.vote_count == 1) {
+            word = "vote";
+        } else {
+            word = "votes";
+        }
+
         let date = movie.release_date.substring(0,4);
         
             string += `
-            <div class="backdrop col-lg-12" style="background-image:url('https://image.tmdb.org/t/p/original${movie.backdrop_path}');">
-                <div class="backdrop-film col-lg-12"></div>
+            <div class="backdrop" style="background-image:url('https://image.tmdb.org/t/p/original${movie.backdrop_path}');">
+                <div class="backdrop-film"></div>
                 <div class="top-details container">
-                    <div class="details-left col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <img src="https://image.tmdb.org/t/p/w400${movie.poster_path}" height="250">
+                    <div class="details-left">
+                        <img class="img-responsive" src="${movie.poster_path != undefined ? 'https://image.tmdb.org/t/p/w400' + movie.poster_path : 'img/poster-blank.jpg'}" height="250">
                     </div>
-                    <div class="details-right col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="details-right">
                         <h3 class="title">${movie.title}<span class="date">(${date})</span></h3>
-                        <h3 class="score"><i class="fas fa-star"></i>${movie.vote_average}</h3>
-                        <span class="vote-count">${movie.vote_count} votes</span>
+                        <h3 class="score"><i class="fas fa-star"></i><span id="score-number">${movie.vote_average}</span></h3>
+                        <span class="vote-count">${movie.vote_count + " " + word}</span>
                         ${genres}
                         <p class="overview">${movie.overview}</p>
                     </div>
@@ -151,7 +328,7 @@ function getMovie() {
 
         for (let i = 0; i <= movie.crew.length-1; i++) {
             if (movie.crew[i].job == "Director") {
-                directors += `<li class="crew-name">${movie.crew[i].name}</li>`;
+                directors += `<li class="top-crew-name"><a href="#" onclick="personSelected(${movie.crew[i].id})">${movie.crew[i].name}</a></li>`;
             }
         }
 
@@ -159,7 +336,7 @@ function getMovie() {
 
         for (let i = 0; i <= movie.crew.length-1; i++) {
             if (movie.crew[i].job == "Writer" || movie.crew[i].job == "Screenplay" || movie.crew[i].job == "Novel" || movie.crew[i].job == "Author") {
-                writers += `<li class="crew-name">${movie.crew[i].name}</li>`;
+                writers += `<li class="top-crew-name"><a href="#" onclick="personSelected(${movie.crew[i].id})">${movie.crew[i].name}</a></li>`;
             }
         }
 
@@ -176,7 +353,7 @@ function getMovie() {
                 </div>
             </div>`
 
-        $(".details-right").append(crew);
+        $(".overview").append(crew);
 
     })
     .catch((err) => {
@@ -197,7 +374,7 @@ function getMovie() {
         string += `
                         <h4 class="images-header">Images</h4>
                             <ul>
-                                <li><img featherlight="image" src="https://image.tmdb.org/t/p/w300/${images.backdrops[0].file_path}" onclick="openModal();currentSlide(1)"></li>
+                                <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[0].file_path}" onclick="openModal();currentSlide(1)"></li>
                                 <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[1].file_path}" onclick="openModal();currentSlide(2)"></li>
                                 <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[2].file_path}" onclick="openModal();currentSlide(3)"></li>
                                 <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[3].file_path}" onclick="openModal();currentSlide(4)"></li>
@@ -206,7 +383,8 @@ function getMovie() {
                                 <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[0].file_path}" onclick="openModal();currentSlide(7)" height="173"></li>
                                 <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[1].file_path}" onclick="openModal();currentSlide(8)" height="173"></li>
                                 <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[2].file_path}" onclick="openModal();currentSlide(9)" height="173"></li>
-                            </ul>`
+                            </ul>
+                        `;
 
         modalString += `
                             <span class="close cursor" onclick="closeModal()">&times;</span>
@@ -241,7 +419,7 @@ function getMovie() {
                                 </div>
 
                                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(1)"><&#10095;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
                             </div>
                     `;
 
@@ -317,7 +495,7 @@ function getMovie() {
 
         for (let i = 0; i <= 6; i++) {
             if (movie.cast[i] !== undefined) {
-                cast +=  `<li><a href="#" onclick="personSelected(${movie.cast[i].id})"><img src='https://image.tmdb.org/t/p/w138_and_h175_face/${movie.cast[i].profile_path}'></a><a href="#" onclick="personSelected(${movie.cast[i].id})"><p class="actor">${movie.cast[i].name}</p></a><p class="character">${movie.cast[i].character}</p></li>`;
+                cast +=  `<li><a href="#" onclick="personSelected(${movie.cast[i].id})"><img src="${movie.cast[i].profile_path != null ? 'https://image.tmdb.org/t/p/w138_and_h175_face/' + movie.cast[i].profile_path : 'img/avatar.jpg'}"></a><a href="#" onclick="personSelected(${movie.cast[i].id})"><p class="actor">${movie.cast[i].name}</p></a><p class="character">${movie.cast[i].character}</p></li>`;
             } else {
                 break;
             }
@@ -325,12 +503,12 @@ function getMovie() {
 
         string += `
         <h4 class="cast-header">Top Cast</h4>
-            <ul>`
+            <ul>`;
             string += cast;    
-            string += `</ul>
-        `;
+        string += `</ul>`;
+        string += `<a class="full-cast-link" href="#" onclick="creditsSelected(${movieId})">See full cast and crew</a>`;
 
-    $(".cast").append(string);
+    $(".cast-list").append(string);
 
     })
     .catch((err) => {
@@ -339,7 +517,7 @@ function getMovie() {
             <h4 class="cast-header">Top Cast</h4>
             <p class="error-message">No cast information available.</p>
         `;
-        $(".cast").append(string);
+        $(".cast-list").append(string);
     });
 
 
@@ -384,8 +562,10 @@ function getMovie() {
 
 
 
-    /* RECOMMENDATIONS */
 
+
+
+    /* RECOMMENDATIONS */
 
 
     axios.get('https://api.themoviedb.org/3/movie/' + movieId + '/recommendations?api_key=4f3fdbd8c5943719506e53611dd7be34&page=1')
@@ -396,7 +576,7 @@ function getMovie() {
         for (let i = 0; i <= 5; i++) {
             if (recommend.results[i] !== undefined) {
                 movies += `<li><a href="#" onclick="movieSelected(${recommend.results[i].id})">
-                            <img src="https://image.tmdb.org/t/p/w300/${recommend.results[i].backdrop_path}">
+                            <img src="${recommend.results[i].backdrop_path != null ? "https://image.tmdb.org/t/p/w300/" + recommend.results[i].backdrop_path : "img/blank_image.png"}" width="300">
                             <div>
                                 <p>${recommend.results[i].title}</p>
                                 <i class="fas fa-star recommend-star"></i>
@@ -433,4 +613,200 @@ function getMovie() {
 
         $(".recommendations").append(string);
     });
+}
+
+
+
+
+
+
+
+/* CAST & CREW LIST */
+
+
+function getMovieCredits() {
+
+    let movieId = sessionStorage.getItem('movieId');
+
+    axios.get('https://api.themoviedb.org/3/movie/' + movieId + '?api_key=4f3fdbd8c5943719506e53611dd7be34')
+    .then((response) => {
+        let movie = response.data;
+        let string = `<div><a href="#" onclick="movieSelected(${movieId})"><img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" class="credits-poster"></a></div>
+        <div><a href="#" onclick="movieSelected(${movieId})"><p class="credits-title">${movie.title}</p></a><span class="credits-date">(${movie.release_date.substring(0,4)})</span>
+        <p class="credits-head">Full Cast & Crew</p></div>`;
+
+        $(".credits-header").append(string);
+
+    });
+
+    axios.get("https://api.themoviedb.org/3/movie/" + movieId + "/credits?api_key=4f3fdbd8c5943719506e53611dd7be34")
+    .then((response) => {
+        let results = response.data;
+        
+        let crew = `<ul class="credits-director"><p class="credits-name">Directed by</p>`;
+
+        function insertCredits(job_title) {
+            if (results.crew.length != 0) {
+                for (let i = 0; i <= results.crew.length-1; i++) {
+                    if (results.crew[i].job == job_title) {
+                        crew_more += `<li class="credits-crew-person"><a class="credits-person-name" href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                        <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                    }
+                }
+            }
+        }
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].job == "Director") {
+                    crew += `<li class="credits-crew-person"><a class="credits-person-name" href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a></li>`;
+                }
+            }
+        }
+
+        crew += `</ul><ul class="credits-writers"><p class="credits-name">Writing Credits</p>`
+
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].department == "Writing") {
+                    crew += `<li class="credits-crew-person"><a class="credits-person-name" href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                    <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                }
+            }
+        }
+
+        let cast = `<ul class="credits-cast"><p class="credits-name">Cast</p>`;
+
+        if (results.cast.length != 0) {
+            for (let i = 0; i <= results.cast.length-1; i++) {
+                cast += `<li class="credits-person">
+                <a href="#" onclick="personSelected(${results.cast[i].id})"><img src=${results.cast[i].profile_path != null ? "https://image.tmdb.org/t/p/w300/" + results.cast[i].profile_path : "img/avatar.jpg"}></a>
+                <div>
+                    <a href="#" onclick="personSelected(${results.cast[i].id})" class="top-crew-name">${results.cast[i].name}</a>
+                    <p class="character-name">${results.cast[i].character}</p>
+                </div>
+                </li>`
+            }
+        }
+
+        cast += `</ul>`;
+
+        let crew_more = `<ul class="credits-section"><p class="credits-name">Producers</p>`;
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].job == "Executive Producer" || results.crew[i].job == "Producer") {
+                    crew_more += `<li class="credits-crew-person"><a href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                    <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                }
+            }
+        }
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Music</p>`;
+
+        insertCredits("Original Music Composer");
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Editing</p>`;
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].department == "Editing") {
+                    crew_more += `<li class="credits-crew-person"><a href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                    <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                }
+            }
+        }
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Production Design</p>`;
+
+        insertCredits("Production Design");
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Art Direction</p>`;
+
+        insertCredits("Art Direction");
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Set Decoration</p>`;
+
+        insertCredits("Set Decoration");
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Costume & Make-Up</p>`;
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].department == "Costume & Make-Up") {
+                    crew_more += `<li class="credits-crew-person"><a href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                    <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                }
+            }
+        }
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Production Management</p>`;
+
+        insertCredits("Production Manager");
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Second Unit Director or Assistant Director</p>`;
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].job == "Second Unit Director" || results.crew[i].job == "First Assistant Director" || results.crew[i].job == "Second Assistant Director" || results.crew[i].job == "Third Assistant Director") {
+                    crew_more += `<li class="credits-crew-person"><a href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                    <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                }
+            }
+        }
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Art Department</p>`;
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].department == "Art") {
+                    crew_more += `<li class="credits-crew-person"><a href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                    <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                }
+            }
+        }
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Sound Department</p>`;
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].department == "Sound") {
+                    crew_more += `<li class="credits-crew-person"><a href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                    <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                }
+            }
+        }
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Visual Effects</p>`;
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].department == "Visual Effects") {
+                    crew_more += `<li class="credits-crew-person"><a href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                    <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                }
+            }
+        }
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Stunts</p>`;
+
+        insertCredits("Stunts");
+
+        crew_more += `</ul><ul class="credits-section"><p class="credits-name">Camera Department</p>`;
+
+        if (results.crew.length != 0) {
+            for (let i = 0; i <= results.crew.length-1; i++) {
+                if (results.crew[i].department == "Camera") {
+                    crew_more += `<li class="credits-crew-person"><a href="#" onclick="personSelected(${results.crew[i].id})">${results.crew[i].name}</a>
+                    <span class="credits-job-title">(${results.crew[i].job})</span></li>`;
+                }
+            }
+        }
+
+        $(".cast-and-crew").append(crew);
+        $(".cast-and-crew").append(cast);
+        $(".cast-and-crew").append(crew_more);
+    });
+
 }

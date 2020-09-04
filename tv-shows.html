@@ -1,9 +1,11 @@
 <!DOCUMENT html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
         <link rel="stylesheet" href="style/styles.css">
+        <link rel="stylesheet" href="style/styles-mobile-main.css">
         <link rel="icon" href="img/icon.png">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,48 +17,49 @@
         <title>The Movie Hub</title>
     </head>
     <body>
-            <header class="header row">
-                    <div class="container">
-                        <a href="movies.html" class="branding"><span class="word">The</span> Movie <span class="word">Hub</span></a>
-                        <div class="search-area">
-                            <i class="fa fa-search"></i>
-                            <input type="text" id="searchbox" placeholder="Search for a movie, tv show or person">
-                        </div>
-                        <nav class="menu float-xl-right float-lg-right float-md-right">
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><a href="movies.html" class="movies">Movies</a></li>
-                                <li class="list-inline-item"><a href="tv-shows.html" class="tv-shows menu-selected">Tv Shows</a></li>
-                                <li class="list-inline-item"><a href="people.html" class="people">People</a></li>
-                                <li class="list-inline-item login-button"><a href="#" class="login">Log In</a></li>
-                                <li class="list-inline-item signup-button"><a href="#" class="signup">Sign Up</a></li>
-                                <i class="fa fa-search search"></i>
-                            </ul>
-                        </nav>
+            <header id="navbar" class="header">
+                <div class="container">
+                    <a href="index.html" id="branding" class="branding"><span class="word">The</span> Movie <span class="word">Hub</span></a>
+                    <div id="search-area" class="search-area">
+                        <i class="fa fa-search search-icon"></i>
+                        <input type="text" id="searchbox" placeholder="Search The Movie Hub">
+                        <span class="close-search">&times;</span>
                     </div>
-                </header>
-        <div class="popular-movies col-12">
-            <div class="posters">
-                <ul class="posters-list"></ul>
-            </div>
-        </div>
+                    <nav id="menu" class="menu">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="index.html" class="movies">Movies</a></li>
+                            <li class="list-inline-item"><a href="tv-shows.html" class="tv-shows menu-selected">Tv Shows</a></li>
+                            <li class="list-inline-item"><a href="people.html" class="people">People</a></li>
+                            <i class="fa fa-search search"></i>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
         
-        <div class="charts container col-9">
-            <div class="trending">
-                <i class="fas fa-hashtag"></i>
-                <span>Trending</span>
+            <div class="charts container">
+                <div class="trending"> 
+                    <div class="charts-header">
+                        <i class="fas fa-hashtag"></i>
+                        <span>Trending</span>
+                    </div>
+                        
+                </div>
+                <div class="now-playing">
+                    <div class="charts-header">
+                        <i class="fas fa-play"></i>
+                        <span>On the air</span>
+                    </div>
+                </div>
+                <div class="upcoming">
+                    <div class="charts-header">
+                        <i class="far fa-clock"></i>
+                        <span>Airing today</span>
+                    </div>
+                </div>
             </div>
-            <div class="now-playing">
-                <i class="fas fa-play"></i>
-                <span>On the Air</span>
-            </div>
-            <div class="upcoming">
-                <i class="far fa-clock"></i>
-                <span>Airing Today</span>
-            </div>
-        </div>
 
-        <footer class="footer text-center">
-            <p>Copyright 2019 The Movie Hub | Website designed and developed by Tomas Valevicius</p>
+        <footer class="footer">
+            <p>Copyright 2020 The Movie Hub | Website designed and developed by Tomas Valevicius</p>
             <p>Powered by <a target="_blank" href="https://developers.themoviedb.org/3/getting-started/introduction">TMDb API</a></p>
         </footer>
         
@@ -84,22 +87,15 @@
             $(".menu").fadeIn();
         })
 
-        function openSearch() {
-            var search = document.getElementById("search-area");
-            var branding = document.getElementById("branding");
-            var menu = document.getElementById("menu");
-            search.style.display = "inline-block";
-            branding.style.display = "none";
-            menu.style.display = "none";
-        }
-
-        function closeSearch() {
-            var search = document.getElementById("search-area");
-            var branding = document.getElementById("branding");
-            var menu = document.getElementById("menu");
-            search.style.display = "none";
-            branding.style.display = "inline-block";
-            menu.style.display = "inline";
+        var prevScrollPos = window.pageYOffset;
+            window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollPos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-35px";
+            }
+            prevScrollPos = currentScrollPos;
         }
             
         </script>
