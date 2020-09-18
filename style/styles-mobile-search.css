@@ -1,0 +1,60 @@
+@media only screen and (max-device-width: 1024px) { 
+
+    .item-overview {
+        top: 120px;
+        left: 220px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
+
+@media only screen and (max-device-width: 900px) {
+
+
+
+}
+
+@media only screen and (max-device-width: 800px) { 
+
+
+
+}
+    
+@media only screen and (max-device-width: 600px) {
+
+
+
+}
+    
+@media only screen and (max-device-width: 500px) { 
+
+
+
+}
+
+@media only screen and (max-device-width: 420px) {
+
+
+
+
+}
+@media only screen and (max-device-width: 400px) {
+
+
+
+}
+
+@media only screen and (max-device-width: 360px) {
+
+
+
+}
+    
+@media only screen and (max-device-width: 320px) {
+
+
+
+}

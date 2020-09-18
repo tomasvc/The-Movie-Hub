@@ -62,6 +62,7 @@ html, body {
     width: 100%;
     background: rgba(0, 0, 0, 0.418);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 5px 0;
     margin: 0 auto;
     border-bottom: 1px solid rgb(27, 27, 27);
@@ -566,19 +567,27 @@ html, body {
 }
 
 .vote-count {
-    display: block;
     position: absolute;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 13px;
     color: white;
     text-shadow: 2px 2px 5px black;
+    padding: 0 7px 3px 7px;
     margin-left: 8px;
+    margin-top: 10px;
+}
+
+.selected-vote-count {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #3de23daf;
+    border-radius: 7px;
 }
 
 .genres {
     position: relative;
     display: inline;
     top: -3px;
+    left: 100px;
 }
 
 .genres li {
@@ -796,6 +805,11 @@ html, body {
     display: none;
 }
 
+.slides img {
+    display: block;
+    margin: auto;
+}
+
 .prev,
 .next {
   cursor: pointer;
@@ -804,7 +818,7 @@ html, body {
   width: auto;
   padding: 16px;
   margin-top: -50px;
-  color: white;
+  color: rgb(175, 175, 175);
   font-weight: bold;
   font-size: 20px;
   transition: 0.2s ease;
@@ -1168,6 +1182,7 @@ img.hover-shadow {
 
 
 .people-list {
+    text-align: center;
     width: 80%;
     margin: 100px auto;
 }
