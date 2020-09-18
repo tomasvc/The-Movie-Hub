@@ -28,6 +28,12 @@
         margin: auto;
     }
 
+    .genres {
+        display: inline-block;
+        left: 0;
+        top: 5px;
+    }
+
     .details-right {
        position: absolute;
        display: block;
@@ -189,10 +195,6 @@
         margin: 0;
     }
 
-    .backdrop {
-        margin-top: -50px;
-    }
-
     .backdrop img {
         zoom: 100%;
     }
@@ -219,7 +221,8 @@
         left: 0;
         width: 100%;
         min-height: 400px;
-        margin: 0 -10px;    }
+        margin: 0 -10px;   
+    }
 
     .crew {
         position: relative;
@@ -227,7 +230,7 @@
     }
 
     .images {
-        margin-top: 950px;
+        margin-top: 1000px;
     }
 
     .bottom-details {
@@ -307,6 +310,10 @@
     .cast-list li a img {
         width: 100%;
         height: auto;
+    }
+
+    .images {
+        margin-top: 1070px;
     }
 
 }

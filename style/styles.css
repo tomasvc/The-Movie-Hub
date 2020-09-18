@@ -614,14 +614,14 @@ html, body {
 .crew {
     position: absolute;
     display: block;
-    bottom: 0;
+    margin-top: 20px;
     color: white;
     text-shadow: 1.5px 1.5px 2px black;
 }
 
 .crew div {
     position: relative;
-    display: inline-block;
+    display: block;
     padding-right: 20px;
     top: 0;
 }
