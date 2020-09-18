@@ -5,6 +5,8 @@
         height: auto;
     }
 
+    
+
     .bottom-details {
         width: 80%;
     }
@@ -189,6 +191,10 @@
 
     .backdrop {
         margin-top: -50px;
+    }
+
+    .backdrop img {
+        zoom: 100%;
     }
 
     .details-left {
