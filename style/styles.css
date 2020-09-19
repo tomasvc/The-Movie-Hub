@@ -654,7 +654,6 @@ html, body {
 
 
 .images {
-    position: relative;
     overflow: hidden;
     margin-top: 530px;
     z-index: 1;

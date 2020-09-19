@@ -8,13 +8,55 @@
 
 @media only screen and (max-device-width: 800px) { 
 
+    .credits-cast {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .credits-name {
+        display: block;
+        width: 100%;
+    }
+
+    .credits-cast li {
+        display: block;
+        width: 100%;
+    }
+
+    .credits-person {
+        width: inherit;
+        height: inherit;
+    }
+
+    .credits-person a img {
+        width: 80px;
+        height: auto;
+    }
+
+    .credits-person div {
+        display: inline-block;
+        height: inherit;
+    }
+
+    .top-crew-name {
+        width: 100%;
+    }
+
 }
 
 @media only screen and (max-device-width: 600px) { 
 
+
+
 }
 
-@media only screen and (max-device-width: 500px) { 
+@media only screen and (max-device-width: 570px) { 
+
+    .credits-header div {
+        margin-bottom: 10px;
+    }
 
 }
 
@@ -35,20 +77,6 @@
 
     .cast-and-crew {
         width: 90%;
-    }
-
-    .credits-person a img {
-        width: 100%;
-        height: auto;
-    }
-
-    .top-crew-name {
-        margin: 10px;
-    }
-
-    .character-name {
-        width: 100%;
-        margin: 10px;
     }
 
 }
