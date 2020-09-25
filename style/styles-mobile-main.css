@@ -278,7 +278,6 @@
     }
 
     .charts-header {
-        text-align: center;
         padding: 5px;
     }
 
@@ -287,7 +286,7 @@
     }
 
     .charts-header span {
-        font-size: 30px;
+        font-size: 40px;
     }
 
     .charts-poster {
