@@ -29,11 +29,12 @@ function getTV() {
         let string = ``;
         let date = tv.first_air_date.substring(0,4);
             string += `
-                    <div class="backdrop" style="background-image:url('https://image.tmdb.org/t/p/original${tv.backdrop_path}');">
+                    <div class="backdrop">
+                        <img class="backdrop-image" alt='backdrop' src="https://image.tmdb.org/t/p/original${tv.backdrop_path}"></img>
                         <div class="backdrop-film"></div>
                     <div class="top-details container">
                         <div class="details-left">
-                            <img id="poster" src="${tv.poster_path != undefined ? 'https://image.tmdb.org/t/p/w400' + tv.poster_path : 'img/poster-blank.jpg'}" height="250">
+                            <img id="poster" class="img-responsive" src="${tv.poster_path != undefined ? 'https://image.tmdb.org/t/p/w400' + tv.poster_path : 'img/poster-blank.jpg'}" height="250">
                         </div>
                         <div class="details-right">
                             <h3 class="title">${tv.name}<span class="date">(${date})</span></h3>

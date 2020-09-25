@@ -225,6 +225,10 @@
         margin: 0 -10px;   
     }
 
+    .genres {
+        display: block;
+    }
+
     .crew {
         position: relative;
         margin-top: 10px;

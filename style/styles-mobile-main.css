@@ -277,6 +277,19 @@
         margin-bottom: 20px;
     }
 
+    .charts-header {
+        text-align: center;
+        padding: 5px;
+    }
+
+    .charts-header i {
+        font-size: 20px;
+    }
+
+    .charts-header span {
+        font-size: 30px;
+    }
+
     .charts-poster {
         width: 100%;
     }
@@ -297,6 +310,11 @@
     }
 
     #charts-star, .charts-score span {
+        font-size: 18px;
+    }
+
+    .charts-more {
+        margin-top: 10px;
         font-size: 18px;
     }
 
