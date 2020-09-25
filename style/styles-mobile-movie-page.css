@@ -188,15 +188,16 @@
         margin-top: 80px;
     }
 
+    .backdrop-image {
+        zoom: 90%;
+        left: -1370px;
+    }
+
     .top-details {
         left: 0;
         height: inherit;
         width: 100%;
         margin: 0;
-    }
-
-    .backdrop img {
-        zoom: 100%;
     }
 
     .details-left {

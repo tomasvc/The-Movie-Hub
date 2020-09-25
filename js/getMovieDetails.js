@@ -26,7 +26,8 @@ function getMovie() {
         let date = movie.release_date.substring(0,4);
         
             string += `
-            <div class="backdrop" style="background-image:url('https://image.tmdb.org/t/p/original${movie.backdrop_path}');">
+            <div class="backdrop">
+                <img class="backdrop-image" alt='backdrop' src="https://image.tmdb.org/t/p/original${movie.backdrop_path}"></img>
                 <div class="backdrop-film"></div>
                 <div class="top-details container">
                     <div class="details-left">
