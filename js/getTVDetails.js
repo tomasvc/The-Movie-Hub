@@ -30,7 +30,8 @@ function getTV() {
         let date = tv.first_air_date.substring(0,4);
             string += `
                     <div class="backdrop">
-                        <img class="backdrop-image" alt='backdrop' src="https://image.tmdb.org/t/p/original${tv.backdrop_path}"></img>
+                        <div class="backdrop-image" style="background-image: url(https://image.tmdb.org/t/p/original${tv.backdrop_path})">
+                        </div>
                         <div class="backdrop-film"></div>
                     <div class="top-details container">
                         <div class="details-left">
