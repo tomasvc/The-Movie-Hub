@@ -27,7 +27,7 @@ function getMovie() {
         
             string += `
             <div class="backdrop">
-                <img class="backdrop-image" alt='backdrop' src="https://image.tmdb.org/t/p/original${movie.backdrop_path}"></img>
+                <div class="backdrop-image" style="background-image: url(https://image.tmdb.org/t/p/original${movie.backdrop_path})"></div>
                 <div class="backdrop-film"></div>
                 <div class="top-details container">
                     <div class="details-left">
