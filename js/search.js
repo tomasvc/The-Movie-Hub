@@ -50,10 +50,16 @@ function getResults(x) {
 
             string += `
                 <li class="results-item">
-                    <a onclick="${select}(${el.id})" href="#"><img class="results-poster" src="${el.poster_path != undefined ? 'https://image.tmdb.org/t/p/w200' + el.poster_path : 'img/poster-blank.jpg'}" width="200" alt="${el.name || el.title || el.original_title}"></a>
-                    <a class="item-title" onclick="${select}(${el.id})" href="#">${el.name || el.title || el.original_title}</a><span class="item-date">${date}</span>
-                    <h3 class="item-score">${el.vote_average != undefined ? el.vote_average : ''}</h3>
-                    <p class="item-overview">${el.overview || ''}</p>
+                    <div class="left">
+                        <a onclick="${select}(${el.id})" href="#"><img class="results-poster" src="${el.poster_path != undefined ? 'https://image.tmdb.org/t/p/w200' + el.poster_path : 'img/poster-blank.jpg'}" width="200" alt="${el.name || el.title || el.original_title}"></a>
+                    </div>
+                    <div class="right">
+                        <a class="item-title" onclick="${select}(${el.id})" href="#">${el.name || el.title || el.original_title}</a><span class="item-date">(${date})</span>
+                        <div class="item-score">
+                            <i id="results-star" class="fas fa-star"></i><h3 class="score">${el.vote_average != undefined ? el.vote_average : ''}</h3>
+                        </div>
+                        <p class="item-overview">${el.overview || ''}</p>
+                    </div>
                 </li>
             `
 
