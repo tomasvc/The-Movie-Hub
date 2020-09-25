@@ -391,7 +391,7 @@
     .trending, .now_playing, .upcoming {
         margin: auto;
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .trending ul, .now-playing ul, .upcoming ul {
@@ -453,7 +453,7 @@
     .trending, .now_playing, .upcoming {
         margin: auto;
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .charts-poster {
