@@ -274,7 +274,7 @@
     .trending, .now-playing, .upcoming {
         height: auto;
         margin: auto;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .charts-header {
