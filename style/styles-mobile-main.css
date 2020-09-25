@@ -278,7 +278,8 @@
     }
 
     .charts-header {
-        padding-bottom: 5px;
+        margin-left: 5px;
+        margin-bottom: 5px;
     }
 
     .charts-header i {
