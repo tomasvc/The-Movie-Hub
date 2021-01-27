@@ -7,4 +7,4 @@ Certain layout and compatibility issues remain to be fixed.
 
 Created using The Movie Database API.
 
-<a href="https://sad-dubinsky-4bc6b8.netlify.app/index.html">Link</a>
+<a href="https://sad-dubinsky-4bc6b8.netlify.app/index.html">Demo</a>
