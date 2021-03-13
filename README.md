@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/iowGRsm.jpg">
+<img src="https://i.imgur.com/iowGRsm.jpg" width="1000">
 
 # The-Movie-Hub
 Movie Database Website
