@@ -736,7 +736,8 @@ html, body {
 }
 
 .error-message {
-    color: #999;
+    color: white;
+    text-shadow: 3px 3px 6px black;
     font-weight: 100;
 }
 
@@ -946,6 +947,7 @@ img.hover-shadow {
 
 
 .reviews ul {
+    font-family: 'Segoe UI', sans-serif;
     padding: 0;
 }
 
@@ -966,6 +968,7 @@ img.hover-shadow {
 }
 
 .recommendations {
+    font-family: 'Segoe UI', sans-serif;
     position: relative;
 }
 
@@ -1028,34 +1031,32 @@ img.hover-shadow {
 }
 
 .recommendations li p {
+    color: black;
     margin: 0;
 }
 
 .vote-average {
-    color: #3de23d;
+    color: black;
     padding-right: 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
 }
 
 .vote-count {
-    color: #a5a5a5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
 }
 
 .recommend-star {
-    color: #3de23d;
+    color: black;
     padding-right: 2px;
 }
 
 .recommend-rating {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #3de23d;
+    color: black;
     font-weight: 500;
 }
 
 .recommend-votes {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
 }
 
 .recommendations li div span {
@@ -1197,7 +1198,7 @@ img.hover-shadow {
 }
 
 .person p {
-    color: white;
+    color: black;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
@@ -1222,7 +1223,6 @@ img.hover-shadow {
     width: 65%;
     margin: 100px auto;
     margin-bottom: 0;
-    color: white;
 }
 
 .info-left {
@@ -1259,13 +1259,13 @@ img.hover-shadow {
 }
 
 .external-ids .id a {
-    color: white;
+    color: rgb(95, 95, 95);
     font-size: 24px;
     transition: 0.2s ease all;
 }
 
 .external-ids .id a:hover {
-    color: rgb(200, 200, 200);
+    color: rgb(139, 139, 139);
 }
 
 .featured {
@@ -1274,7 +1274,6 @@ img.hover-shadow {
 }
 
 .featured-header {
-    color: rgb(224, 224, 224);
     font-weight: 400;
 }
 
@@ -1287,6 +1286,7 @@ img.hover-shadow {
 }
 
 .featured ul::-webkit-scrollbar {
+    background: none;
     height: 5px;
 }
 
@@ -1318,8 +1318,6 @@ img.hover-shadow {
 .featured-object div {
     position: relative;
     padding: 5px;
-    background: #1c1c1c;
-    color: white;
     text-shadow: none;
     overflow: hidden;
     border-radius: 3px;
@@ -1338,24 +1336,20 @@ img.hover-shadow {
     margin: 0;
 }
 
-.vote-count {
-    color: #a5a5a5;
-}
-
 .featured-star {
-    color: #3de23d;
+    color: black;
     padding-right: 2px;
 }
 
 .object-rating {
+    color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #3de23d;
     font-weight: 500;
 }
 
 .object-votes {
+    color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #a5a5a5;
 }
 
 
@@ -1373,7 +1367,6 @@ img.hover-shadow {
     width: 60%;
     margin: auto;
     margin-top: 100px;
-    color: #999;
 }
 
 .credits-header div {
@@ -1402,7 +1395,6 @@ img.hover-shadow {
 }
 
 .credits-name {
-    color: #999;
     font-weight: 600;
     list-style-type: none;
     margin-bottom: 10px;
@@ -1413,7 +1405,6 @@ img.hover-shadow {
 }
 
 .credits-job-title {
-    color: #999;
     margin-left: 5px;
 }
 
@@ -1449,8 +1440,7 @@ img.hover-shadow {
 
 .credits-cast li {
     display: inline-block;
-    color: rgb(212, 212, 212);
-    background: #1c1c1c;
+    background: white;
     width: 45%;
     margin: 3px;
 }
