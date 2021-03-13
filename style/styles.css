@@ -27,17 +27,18 @@
 
 
 html, body {
-    background: #101010;
+    background: #f3f3f3;
     font-family: Raleway, sans-serif;
     overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    background: black;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #181818; 
+    background: #f3f3f300; 
 }
 
 ::-webkit-scrollbar-thumb {
@@ -60,9 +61,7 @@ html, body {
 .header {
     position: fixed;
     width: 100%;
-    background: rgba(0, 0, 0, 0.418);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgb(0, 0, 0);
     padding: 5px 0;
     margin: 0 auto;
     border-bottom: 1px solid rgb(27, 27, 27);
@@ -81,7 +80,7 @@ html, body {
     color: #3de23d;
     font-size: 20px;
     text-transform: uppercase;
-    top: 5px;
+    top: 8px;
 }
 
 .word {
@@ -211,20 +210,17 @@ html, body {
 
 .charts {
     display: block;
-    width: 100%;
     margin: 80px auto 20px auto;
     padding: 0;
-    color: rgb(224, 224, 224);
+    color: rgb(0, 0, 0);
 }
 
 .charts-poster {
-    width: 120px;
+    width: 180px;
     height: auto;
 }
 
 #charts-item {
-    display: inline-block;
-    width: 280px;
     height: auto;
     margin: 2px;
 }
@@ -238,22 +234,22 @@ html, body {
 }
 
 .trending, .now-playing, .upcoming {
-    display: block;
-    width: auto;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .charts ul {
+    display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
-    padding-left: 0;
-    margin: 0;
 }
 
 #charts-star {
     position: relative;
     left: 10px;
     color: #3de23d;
+    text-shadow: #181818;
     font-size: 20px;
 }
 
@@ -266,6 +262,7 @@ html, body {
 
 .charts-title {
     position: absolute;
+    color: black;
     top: 0;
     left: 120px;
     font-size: 16px;
@@ -282,10 +279,9 @@ html, body {
 .charts ul li {
     position: relative;
     display: inline-block;
-    height: 170px;
-    width: 255px;
-    background: #1c1c1c;
-    color: white;
+    background: #ffffff;
+    color: black;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.233);
     margin: 10px;
     border-radius: 3px;
     transition: 0.2s ease all;
@@ -323,11 +319,10 @@ html, body {
 
 .charts-more {
     margin: 20px 0 20px 5px;
-    color: white;
+    color: black;
 }
 
 .charts-more:hover {
-    color: white;
     text-decoration: none;
 }
 
@@ -342,30 +337,15 @@ html, body {
 
 
 .chart-list {
-    display: block;
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
     margin: auto;
 }
 
-.chart-list h4 {
-    color: rgb(220, 220, 220);
-}
-
-.chart-list ul {
-    display: block;
-    list-style-type: none;
-    width: 75%;
-    margin: 5% auto;
-    margin-bottom: 20px;
-    padding: 0;
-}
-
 #charts-list-item {
-    position: relative;
-    display: inline-block;
-    width: 280px;
-    height: auto;
-    background: #1c1c1c;
+    list-style-type: none;
+    width: 180px;
     margin: 2px;
     border-radius: 2px;
     transition: 0.2s ease all;
@@ -376,7 +356,7 @@ html, body {
 }
 
 .charts-list-poster {
-    width: 120px;
+    width: 180px;
     height: auto;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
@@ -577,8 +557,7 @@ html, body {
     position: absolute;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 13px;
-    color: white;
-    text-shadow: 2px 2px 5px black;
+    color: black;
     padding: 0 7px 3px 7px;
     margin-left: 8px;
     margin-top: 10px;
@@ -611,6 +590,11 @@ html, body {
 }
 
 .overview {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
     color: white;
     font-weight: 500;
     text-shadow: 1.5px 1.5px 2px black;
@@ -619,7 +603,6 @@ html, body {
 }
 
 .crew {
-    position: absolute;
     display: block;
     margin-top: 20px;
     color: white;
@@ -627,10 +610,8 @@ html, body {
 }
 
 .crew div {
-    position: relative;
     display: block;
     padding-right: 20px;
-    top: 0;
 }
 
 .crew-title {
@@ -875,7 +856,6 @@ img.hover-shadow {
 
 
 .cast-list {
-    color: rgb(224, 224, 224);
     top: 10px;
     padding: 0;
     margin-bottom: 30px;
@@ -897,8 +877,8 @@ img.hover-shadow {
     display: table-cell;
     width: 130px;
     height: auto;
-    color: rgb(212, 212, 212);
-    background: #1c1c1c;
+    background: #ffffff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.144);
     margin: 5px;
 }
 
@@ -915,7 +895,6 @@ img.hover-shadow {
     font-size: 16px;
     font-weight: 600;
     padding: 10px 10px 0 10px;
-    color: white;
 }
 
 .character {
@@ -930,7 +909,6 @@ img.hover-shadow {
 .reviews {
     position: relative;
     display: block;
-    color: rgb(224, 224, 224);
 }
 .reviews ul {
     position: relative;
@@ -974,7 +952,8 @@ img.hover-shadow {
 .reviews ul li {
     position: relative;
     display: block;
-    background: rgb(24, 24, 24);
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.144);
     margin-bottom: 20px;
     list-style-type: none;
 }
@@ -991,7 +970,6 @@ img.hover-shadow {
 }
 
 .recommendations-header {
-    color: rgb(224, 224, 224);
     font-weight: 400;
 }
 
@@ -1004,11 +982,13 @@ img.hover-shadow {
 }
 
 .recommendations ul::-webkit-scrollbar {
-    height: 5px;
+    height: 4px;
+    background: inherit
 }
 
 .recommendations ul::-webkit-scrollbar-thumb {
     border-radius: 5px;
+    background: rgb(180, 180, 180);
 }
 
 .recommendations ul::-webkit-scrollbar-track {
@@ -1019,6 +999,7 @@ img.hover-shadow {
     padding: 2px;
     height: 230px;
     list-style-type: none;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.144);
     margin-bottom: 5px;
     text-shadow: none;
     transition: 0.2s ease all;
@@ -1035,8 +1016,7 @@ img.hover-shadow {
 .recommendations li div {
     position: relative;
     padding: 5px;
-    background: #1c1c1c;
-    color: white;
+    background: white;
     text-shadow: none;
     overflow: hidden;
     border-radius: 3px;
@@ -1076,7 +1056,6 @@ img.hover-shadow {
 
 .recommend-votes {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #a5a5a5;
 }
 
 .recommendations li div span {
