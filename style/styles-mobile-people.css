@@ -1,9 +1,6 @@
-
-
-
-@media only screen and (max-device-width: 1024px) { 
-
-    html, body {
+@media only screen and (max-device-width: 1024px) {
+    html,
+    body {
         width: 100%;
     }
 
@@ -25,12 +22,9 @@
         font-size: 12px;
         white-space: pre-wrap;
     }
-
 }
 
-
 @media only screen and (max-device-width: 900px) {
-
     .people-list {
         display: block;
         width: 85%;
@@ -40,13 +34,9 @@
     .person {
         display: inline-block;
     }
-
-
 }
 
-
-@media only screen and (max-device-width: 800px) { 
-
+@media only screen and (max-device-width: 800px) {
     .people-list {
         width: 70%;
     }
@@ -66,12 +56,9 @@
     .person p {
         font-size: 12px;
     }
-
 }
 
-
-@media only screen and (max-device-width: 500px) { 
-
+@media only screen and (max-device-width: 500px) {
     #branding {
         float: none;
         text-align: center;
@@ -92,12 +79,9 @@
         width: 150px;
         height: auto;
     }
-
 }
 
-
 @media only screen and (max-device-width: 425px) {
-
     .title {
         font-size: 30px;
     }
@@ -122,17 +106,12 @@
     .page-nav {
         margin: 20px;
     }
-
 }
-
 
 @media only screen and (max-device-width: 360px) {
-
 }
 
-
 @media only screen and (max-device-width: 320px) {
-
     .people-list {
         width: 100%;
         display: inline-block;
@@ -152,5 +131,4 @@
     .person p {
         font-size: 10px;
     }
-
 }

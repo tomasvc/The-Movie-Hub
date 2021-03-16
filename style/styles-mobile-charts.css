@@ -1,8 +1,4 @@
-
-
-
-@media only screen and (max-device-width: 1024px) { 
-
+@media only screen and (max-device-width: 1024px) {
     .chart-list {
         width: 100%;
         margin: 80px auto;
@@ -42,20 +38,18 @@
         z-index: 1;
     }
 
-    #charts-list-star, .charts-list-score span {
+    #charts-list-star,
+    .charts-list-score span {
         font-size: 14px;
     }
 
     .page-nav {
         margin-left: 3%;
     }
-
 }
 
-
 @media only screen and (max-device-width: 900px) {
-
-    .chart-list{
+    .chart-list {
         width: 100%;
         margin: auto;
         margin-bottom: 20px;
@@ -95,7 +89,8 @@
         z-index: 1;
     }
 
-    #charts-list-star, .charts-list-score span {
+    #charts-list-star,
+    .charts-list-score span {
         font-size: 14px;
     }
 
@@ -107,12 +102,9 @@
     .page-nav {
         margin-left: 11%;
     }
-
 }
 
-
-@media only screen and (max-device-width: 800px) { 
-
+@media only screen and (max-device-width: 800px) {
     .chart-list {
         width: 100%;
         margin: auto;
@@ -151,28 +143,25 @@
         left: 127px;
     }
 
-    #charts-list-star, .charts-list-score span {
+    #charts-list-star,
+    .charts-list-score span {
         font-size: 14px;
     }
 
     .page-nav {
         margin-left: 6%;
     }
-
 }
 
 @media only screen and (max-device-width: 600px) {
-
     .chart-list ul {
         width: 100%;
     }
-
 }
 
-
-@media only screen and (max-device-width: 500px) { 
-
-    body, html {
+@media only screen and (max-device-width: 500px) {
+    body,
+    html {
         width: 100%;
     }
 
@@ -212,15 +201,13 @@
         left: 0;
     }
 
-    #charts-list-star, .charts-list-score span {
+    #charts-list-star,
+    .charts-list-score span {
         font-size: 18px;
     }
-
 }
 
-
 @media only screen and (max-device-width: 420px) {
-
     .chart-list {
         margin: auto;
         margin-top: 100px;
@@ -238,12 +225,9 @@
     #charts-list-item {
         width: 49%;
     }
-
 }
 
-
 @media only screen and (max-device-width: 400px) {
-
     .chart-list {
         width: 100%;
         margin: auto;
@@ -278,7 +262,8 @@
         z-index: 1;
     }
 
-    #charts-list-star, .charts-list-score span {
+    #charts-list-star,
+    .charts-list-score span {
         font-size: 15px;
     }
 
@@ -287,12 +272,9 @@
         height: auto;
         width: 48.8%;
     }
-
 }
 
-
 @media only screen and (max-device-width: 360px) {
-
     .charts-list-poster {
         width: 100%;
         height: auto;
@@ -306,12 +288,9 @@
     .chart-list ul h4 {
         font-size: 20px;
     }
-
 }
 
-
 @media only screen and (max-device-width: 320px) {
-
     .chart-list ul {
         margin: auto;
         margin-top: 0;
@@ -329,8 +308,8 @@
         height: auto;
     }
 
-    #charts-list-star, .charts-list-score span {
+    #charts-list-star,
+    .charts-list-score span {
         font-size: 12px;
     }
-
 }

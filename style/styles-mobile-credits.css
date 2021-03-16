@@ -1,13 +1,10 @@
-@media only screen and (max-device-width: 1024px) { 
-
+@media only screen and (max-device-width: 1024px) {
 }
 
-@media only screen and (max-device-width: 900px) { 
-
+@media only screen and (max-device-width: 900px) {
 }
 
-@media only screen and (max-device-width: 800px) { 
-
+@media only screen and (max-device-width: 800px) {
     .credits-cast {
         display: flex;
         flex-direction: row;
@@ -43,34 +40,25 @@
     .top-crew-name {
         width: 100%;
     }
-
 }
 
-@media only screen and (max-device-width: 600px) { 
-
-
-
+@media only screen and (max-device-width: 600px) {
 }
 
-@media only screen and (max-device-width: 570px) { 
-
+@media only screen and (max-device-width: 570px) {
     .credits-header div {
         margin-bottom: 10px;
     }
-
 }
 
-@media only screen and (max-device-width: 425px) { 
-
-    html, body {
+@media only screen and (max-device-width: 425px) {
+    html,
+    body {
         width: 100%;
     }
-    
-
 }
 
-@media only screen and (max-device-width: 400px) { 
-
+@media only screen and (max-device-width: 400px) {
     .credits-header {
         width: 90%;
     }
@@ -78,13 +66,10 @@
     .cast-and-crew {
         width: 90%;
     }
-
 }
 
-@media only screen and (max-device-width: 360px) { 
-
+@media only screen and (max-device-width: 360px) {
 }
 
-@media only screen and (max-device-width: 320px) { 
-
+@media only screen and (max-device-width: 320px) {
 }

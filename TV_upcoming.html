@@ -1,29 +1,50 @@
 <!DOCUMENT html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-        <link rel="stylesheet" href="style/styles.css">
-        <link rel="stylesheet" href="style/styles-mobile-main.css">
-        <link rel="stylesheet" href="style/styles-mobile-charts.css">
-        <link rel="icon" href="img/icon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+            integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style/styles.css" />
+        <link rel="stylesheet" href="style/styles-mobile-main.css" />
+        <link rel="stylesheet" href="style/styles-mobile-charts.css" />
+        <link rel="icon" href="img/icon.png" />
         <title>The Movie Hub</title>
     </head>
     <body>
         <header id="navbar" class="header">
             <div class="container">
-                <a href="index.html" id="branding" class="branding"><span class="word">The</span> Movie <span class="word">Hub</span></a>
+                <a href="index.html" id="branding" class="branding"
+                    ><span class="word">The</span> Movie
+                    <span class="word">Hub</span></a
+                >
                 <div id="search-area" class="search-area">
                     <i class="fa fa-search search-icon"></i>
-                    <input type="text" id="searchbox" placeholder="Search The Movie Hub">
+                    <input
+                        type="text"
+                        id="searchbox"
+                        placeholder="Search The Movie Hub"
+                    />
                     <span class="close-search">&times;</span>
                 </div>
                 <nav id="menu" class="menu">
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a href="index.html" class="movies menu-selected">Movies</a></li>
-                        <li class="list-inline-item"><a href="tv-shows.html" class="tv-shows">Tv Shows</a></li>
-                        <li class="list-inline-item"><a href="people.html" class="people">People</a></li>
+                        <li class="list-inline-item">
+                            <a href="index.html" class="movies menu-selected"
+                                >Movies</a
+                            >
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="tv-shows.html" class="tv-shows"
+                                >Tv Shows</a
+                            >
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="people.html" class="people">People</a>
+                        </li>
                         <i class="fa fa-search search"></i>
                     </ul>
                 </nav>
@@ -33,10 +54,20 @@
         <div class="chart-list"></div>
 
         <footer class="footer">
-            <p>Copyright 2020 The Movie Hub | Website designed and developed by Tomas Valevicius</p>
-            <p>Powered by <a target="_blank" href="https://developers.themoviedb.org/3/getting-started/introduction">TMDb API</a></p>
+            <p>
+                Copyright 2021 The Movie Hub | Website designed and developed by
+                Tomas Valevicius
+            </p>
+            <p>
+                Powered by
+                <a
+                    target="_blank"
+                    href="https://developers.themoviedb.org/3/getting-started/introduction"
+                    >TMDb API</a
+                >
+            </p>
         </footer>
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
@@ -46,45 +77,41 @@
         <script src="js/tv-shows.js"></script>
         <script src="js/search.js"></script>
 
-        <script> 
+        <script>
+            getUpcomingTVCharts(1);
 
-        getUpcomingTVCharts(1);
-
-        $(document).ready(() => {
-            $(function() {
-                $(".popular-movies").mousewheel(function(event, delta) {
-                    this.scrollLeft -= (delta * 80);
-                    this.scrollRight -= (delta * 80);
-                    event.preventDefault();
+            $(document).ready(() => {
+                $(function () {
+                    $(".popular-movies").mousewheel(function (event, delta) {
+                        this.scrollLeft -= delta * 80;
+                        this.scrollRight -= delta * 80;
+                        event.preventDefault();
+                    });
                 });
             });
-        });
 
-        $(".search").click(function() {
-            $(".search-area").fadeIn();
-            $(".branding").fadeOut();
-            $(".menu").fadeOut();
-        });
+            $(".search").click(function () {
+                $(".search-area").fadeIn();
+                $(".branding").fadeOut();
+                $(".menu").fadeOut();
+            });
 
-        $(".close-search").click(function() {
-            $(".search-area").fadeOut();
-            $(".branding").fadeIn();
-            $(".menu").fadeIn();
-        })
+            $(".close-search").click(function () {
+                $(".search-area").fadeOut();
+                $(".branding").fadeIn();
+                $(".menu").fadeIn();
+            });
 
-        var prevScrollPos = window.pageYOffset;
-            window.onscroll = function() {
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollPos > currentScrollPos) {
-                document.getElementById("navbar").style.top = "0";
-            } else {
-                document.getElementById("navbar").style.top = "-35px";
-            }
-            prevScrollPos = currentScrollPos;
-        }
-            
+            var prevScrollPos = window.pageYOffset;
+            window.onscroll = function () {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollPos > currentScrollPos) {
+                    document.getElementById("navbar").style.top = "0";
+                } else {
+                    document.getElementById("navbar").style.top = "-55px";
+                }
+                prevScrollPos = currentScrollPos;
+            };
         </script>
-
     </body>
-
 </html>

@@ -1,9 +1,6 @@
-
-
-
-@media only screen and (max-device-width: 1024px) { 
-
-    html, body {
+@media only screen and (max-device-width: 1024px) {
+    html,
+    body {
         width: 100vw;
     }
 
@@ -15,22 +12,15 @@
         padding: 0;
         margin-top: 0;
     }
-
 }
-
 
 @media only screen and (max-device-width: 900px) {
-
 }
 
-
-@media only screen and (max-device-width: 800px) { 
-
+@media only screen and (max-device-width: 800px) {
 }
 
-
-@media only screen and (max-device-width: 500px) { 
-
+@media only screen and (max-device-width: 500px) {
     .person-details {
         width: 80%;
         display: block;
@@ -55,19 +45,13 @@
         margin-left: 30px;
         margin-right: 30px;
     }
-
 }
 
-
 @media only screen and (max-device-width: 425px) {
-
 }
 
 @media only screen and (max-device-width: 360px) {
-
 }
 
-
 @media only screen and (max-device-width: 320px) {
-
 }

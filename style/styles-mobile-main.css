@@ -1,11 +1,8 @@
-
-
 /* MEDIA QUERIES */
 
-
-@media only screen and (max-device-width: 1024px) { 
-
-    html, body {
+@media only screen and (max-device-width: 1024px) {
+    html,
+    body {
         width: 100%;
     }
 
@@ -31,7 +28,9 @@
         margin: 80px auto;
     }
 
-    .trending, .now-playing, .upcoming {
+    .trending,
+    .now-playing,
+    .upcoming {
         width: auto;
         margin-bottom: 50px;
     }
@@ -39,49 +38,18 @@
     .charts-header span {
         font-size: 24px;
     }
-
-    .charts-poster {
-        width: 120px;
-        height: auto;
-    }
-
-    #charts-item {
-        display: inline-block;
-        width: 300px;
-        height: inherit;
-    }
-
-    .charts-title {
-        position: absolute;
-        display: inline-block;
-        font-size: 16px;
-        top: 0;
-    }
-
-    .charts-score {
-        position: absolute;
-        display: inline-block;
-        margin: 0;
-        padding: 5px 0;
-        z-index: 1;
-    }
-
-    #charts-star, .charts-score span {
-        font-size: 14px;
-    }
-
 }
 
 @media only screen and (max-device-width: 900px) {
-
-    html, body {
+    html,
+    body {
         width: 100%;
     }
 
     #branding {
         float: left;
     }
-    
+
     .menu {
         float: right;
     }
@@ -92,14 +60,18 @@
         margin-bottom: 20px;
     }
 
-    .trending, .now-playing, .upcoming {
+    .trending,
+    .now-playing,
+    .upcoming {
         width: auto;
         height: auto;
         margin: auto;
         margin-top: 60px;
     }
 
-    .trending ul, .now-playing ul, .upcoming ul {
+    .trending ul,
+    .now-playing ul,
+    .upcoming ul {
         display: inline-block;
         height: auto;
         width: auto;
@@ -111,43 +83,11 @@
         margin-left: 12px;
     }
 
-    .charts-poster {
-        width: 150px;
-        height: auto;
-    }
-
-    .charts-title {
-        position: absolute;
-        display: inline-block;
-        font-size: 16px;
-        left: 150px;
-    }
-
-    .charts-score {
-        position: absolute;
-        display: inline-block;
-        left: 150px;
-        margin: 0;
-        padding: 5px 0;
-        z-index: 1;
-    }
-
-    #charts-star, .charts-score span {
-        font-size: 14px;
-    }
-
-    #charts-item {
-        width: 49%;
-        height: auto;
-    }
-
 }
 
-
-
-@media only screen and (max-device-width: 800px) { 
-
-    html, body {
+@media only screen and (max-device-width: 800px) {
+    html,
+    body {
         width: 100%;
     }
 
@@ -180,58 +120,24 @@
     .charts {
         margin: auto;
         margin-top: 70px;
+        margin-bottom: 30px;
     }
 
     .charts-header span {
         font-size: 22px;
     }
-
-    #charts-item {
-        width: 49%;
-        height: auto;
-    }
-
-    .charts-poster {
-        width: 130px;
-        height: auto;
-    }
-
-    .charts-title {
-        position: absolute;
-        display: inline-block;
-        font-size: 16px;
-        top: 0;
-        left: 127px;
-    }
-
-    .charts-score {
-        position: absolute;
-        display: inline-block;
-        left: 127px;
-    }
-
-    #charts-star, .charts-score span {
-        font-size: 14px;
-    }
-
 }
 
 @media only screen and (max-device-width: 600px) {
-
     .charts {
         width: 100%;
         margin: 0;
     }
-
-    .trending ul, .now_playing ul, .upcoming ul {
-        width: 100%;
-    }
-
 }
 
-@media only screen and (max-device-width: 500px) { 
-
-    html, body {
+@media only screen and (max-device-width: 500px) {
+    html,
+    body {
         width: 100%;
     }
 
@@ -271,7 +177,9 @@
         margin-top: 100px;
     }
 
-    .trending, .now-playing, .upcoming {
+    .trending,
+    .now-playing,
+    .upcoming {
         height: auto;
         margin: auto;
         margin-bottom: 40px;
@@ -286,65 +194,19 @@
         font-size: 20px;
     }
 
-    .charts-header span {
-        font-size: 40px;
-    }
-
-    .charts-poster {
-        width: 100%;
-    }
-
-    #charts-item {
-        height: auto;
-        width: 49%;
-    }
-
-    .charts-title {
-        display: none;
-    }
-
-    .charts-score {
-        position: relative;
-        display: block;
-        left: 0;
-    }
-
-    #charts-star, .charts-score span {
-        font-size: 18px;
-    }
-
-    .charts-more {
-        margin-top: 10px;
-        font-size: 18px;
-    }
-
 }
 
 @media only screen and (max-device-width: 420px) {
-
     .charts {
         margin: auto;
         margin-top: 100px;
     }
 
-    .charts-header span {
-        font-size: 20px;
-    }
-
-    .charts-poster {
-        width: 100%;
-        height: auto;
-    }
-
-    #charts-item {
-        width: 49%;
-    }
-
 }
 
 @media only screen and (max-device-width: 400px) {
-
-    html, body {
+    html,
+    body {
         width: 100%;
     }
 
@@ -356,7 +218,7 @@
     #menu ul {
         text-align: center;
     }
-    
+
     #branding {
         display: block;
         text-align: center;
@@ -382,93 +244,15 @@
         right: -20px;
     }
 
-    .charts {
-        width: 100%;
-        margin: auto;
-        margin-top: 100px;
-    }
-
-    .trending, .now_playing, .upcoming {
-        margin: auto;
-        margin-top: 0;
-        margin-bottom: 40px;
-    }
-
-    .trending ul, .now-playing ul, .upcoming ul {
-        display: inline-block;
-        height: auto;
-        margin: auto;
-    }
-
-    .charts-header {
-        display: block;
-        margin-left: 12px;
-    }
-
-    .charts-poster {
-        width: 100%;
-        height: auto;
-    }
-
-    .charts-title {
-        display: none;
-        font-size: 20px;
-        top: 225px;
-    }
-
-    .charts-score {
-        display: block;
-        padding: 5px 0;
-        z-index: 1;
-    }
-
-    #charts-star, .charts-score span {
-        font-size: 15px;
-    }
-
-    #charts-item {
-        display: inline-block;
-        height: auto;
-        width: 48.8%;
-    }
-
-}
-
-@media only screen and (max-device-width: 360px) {
-
-    .charts-poster {
-        width: 100%;
-        height: auto;
-    }
-
-    #charts-item {
-        width: 48.5%;
-        height: auto;
-    }
 
 }
 
 @media only screen and (max-device-width: 320px) {
 
-    .trending, .now_playing, .upcoming {
-        margin: auto;
-        margin-top: 0;
-        margin-bottom: 40px;
-    }
-
-    .charts-poster {
-        width: 100%;
-        height: auto;
-    }
-
     #charts-item {
         display: inline-block;
-        width: 48.5%;
+        width: 50%;
         height: auto;
-    }
-
-    #charts-star, .charts-score span {
-        font-size: 12px;
     }
 
 }
