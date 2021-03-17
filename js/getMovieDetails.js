@@ -248,10 +248,11 @@ function getMovie() {
                     cast += `<p class="error-message">No cast information available</p>`;
                 }
 
-                // get top 6 cast members from database
-                for (let i = 0; i <= 6; i++) {
+                // get top 8 cast members from database
+                for (let i = 0; i <= 7; i++) {
                     if (data.cast[i] !== undefined) {
                         cast += `<li>
+                                <div>  
                                 <a href="#" onclick="personSelected(${
                                     data.cast[i].id
                                 })">
@@ -262,6 +263,8 @@ function getMovie() {
                                             : "img/avatar.jpg"
                                     }">
                                 </a>
+                                </div>
+                                <div>
                                 <a href="#" onclick="personSelected(${
                                     data.cast[i].id
                                 })">
@@ -270,6 +273,7 @@ function getMovie() {
                                 <p class="character">${
                                     data.cast[i].character
                                 }</p>
+                                </div>
                             </li>`;
                     } else {
                         break;

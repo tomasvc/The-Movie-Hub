@@ -1,134 +1,69 @@
-@media only screen and (max-device-width: 1024px) {
-    html,
-    body {
-        width: 100%;
-    }
-
-    .person-list {
-        display: block;
-        width: 70%;
-    }
+@media only screen and (max-device-width: 1440px) {
 
     .person {
-        display: inline-block;
-        width: 150px;
+        max-width: 200px;
     }
 
-    .person img {
-        width: 150px;
+}
+
+@media only screen and (max-device-width: 1024px) {
+
+    .person {
+        max-width: 150px;
     }
 
     .person p {
         font-size: 12px;
-        white-space: pre-wrap;
     }
+
 }
 
 @media only screen and (max-device-width: 900px) {
+
     .people-list {
-        display: block;
-        width: 85%;
-        margin: 12% auto;
+        width: 95%;
     }
 
     .person {
-        display: inline-block;
-    }
-}
-
-@media only screen and (max-device-width: 800px) {
-    .people-list {
-        width: 70%;
-    }
-
-    .person {
-        display: inline-block;
-        width: 150px;
+        width: 120px;
         margin: 5px;
-        margin-bottom: 20px;
-    }
-
-    .person img {
-        width: 150px;
-        height: auto;
-    }
-
-    .person p {
-        font-size: 12px;
-    }
-}
-
-@media only screen and (max-device-width: 500px) {
-    #branding {
-        float: none;
-        text-align: center;
-    }
-
-    .people-list {
-        width: 100%;
-        text-align: center;
-        margin-top: 100px;
-    }
-
-    .person {
-        display: inline-block;
-        margin: 0;
-    }
-
-    .person img {
-        width: 150px;
-        height: auto;
-    }
-}
-
-@media only screen and (max-device-width: 425px) {
-    .title {
-        font-size: 30px;
-    }
-
-    .people-list {
-        display: inline-block;
-    }
-
-    .person {
-        display: inline-block;
-        width: 49%;
-        height: auto;
-        margin: auto;
-    }
-
-    .person img {
-        width: 100%;
-        height: auto;
-        margin: auto;
-    }
-
-    .page-nav {
-        margin: 20px;
-    }
-}
-
-@media only screen and (max-device-width: 360px) {
-}
-
-@media only screen and (max-device-width: 320px) {
-    .people-list {
-        width: 100%;
-        display: inline-block;
-    }
-
-    .person {
-        display: inline-block;
-        width: 49%;
-        height: auto;
-    }
-
-    .person img {
-        width: 100%;
-        height: auto;
     }
 
     .person p {
         font-size: 10px;
     }
+
+}
+
+@media only screen and (max-device-width: 800px) {
+
+
+
+}
+
+@media only screen and (max-device-width: 500px) {
+
+    .person {
+        width: 100px;
+    }
+
+}
+
+@media only screen and (max-device-width: 425px) {
+
+
+
+
+}
+
+@media only screen and (max-device-width: 360px) {
+
+    .person {
+        width: 80px;
+    }
+
+}
+
+@media only screen and (max-device-width: 320px) {
+    
 }

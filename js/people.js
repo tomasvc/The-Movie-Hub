@@ -11,7 +11,8 @@ function getPeople(x) {
                 x
         )
         .then((response) => {
-            document.getElementById("people-list").innerHTML = "";
+            document.querySelector(".list").innerHTML = "";
+            document.querySelector(".pages").innerHTML = "";
 
             let data = response.data;
             let string = ``;
@@ -31,7 +32,7 @@ function getPeople(x) {
                 <p>${data.results[i].name}</p>
             </div></a>
             `;
-                $(".people-list").append(string);
+                $(".list").append(string);
                 string = ``;
             }
 
@@ -56,7 +57,7 @@ function getPeople(x) {
             }
 
             navString += `</div>`;
-            $(".people-list").append(navString);
+            $(".pages").append(navString);
         })
         .catch((err) => {
             console.log(err);

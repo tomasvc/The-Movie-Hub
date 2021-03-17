@@ -45,6 +45,7 @@ body {
 .header {
     display: block;
     position: fixed;
+    max-height: 40px;
     width: 100%;
     background: rgb(0, 0, 0);
     padding: 5px 0;
@@ -54,6 +55,7 @@ body {
 }
 
 .header div {
+    max-height: inherit;
     width: 75%;
     margin: auto;
 }
@@ -102,6 +104,8 @@ body {
 }
 
 #menu {
+    position: relative;
+    max-height: 40px;
     width: auto;
     padding: 10px 0;
     float: right;
@@ -118,19 +122,20 @@ body {
 
 .search-area {
     position: relative;
+    width: 95%;
     display: none;
+    max-height: 40px;
     margin: auto;
 }
 
 #searchbox {
-    position: relative;
-    width: 500px;
-    left: 230px;
+    width: 92%;
+    max-height: inherit;
     color: white;
     background: none;
-    display: inline-block;
     padding: 10px 0;
-    padding-left: 40px;
+    margin-top: 2px;
+    margin-left: 50px;
     font-size: 14px;
     border: none;
     outline: none;
@@ -139,7 +144,7 @@ body {
 
 .search-icon {
     position: absolute;
-    left: 240px;
+    left: 20px;
     top: 14px;
     font-size: 14px;
     color: #888;
@@ -150,8 +155,6 @@ body {
     position: absolute;
     color: #888;
     font-size: 30px;
-    right: 300px;
-    top: -5px;
     transition: 0.2s ease;
     cursor: pointer;
 }
@@ -180,6 +183,21 @@ body {
     opacity: 0;
 }
 
+.shade {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.726);
+    z-index: 1;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 /* HOME CHARTS */
 
 .charts {
@@ -188,7 +206,6 @@ body {
     flex-direction: column;
     margin: 80px auto 20px auto;
     padding: 0;
-    color: rgb(0, 0, 0);
 }
 
 .charts-poster {
@@ -217,7 +234,13 @@ body {
 .upcoming {
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
     margin-bottom: 50px;
+}
+
+.upcoming div {
+    position: relative;
+    left: 20px;
 }
 
 .charts ul {
@@ -355,11 +378,6 @@ body {
     margin-right: 20px;
     color: #3de23d;
     font-size: 14px;
-}
-
-.page-nav {
-    width: 75%;
-    margin: auto;
 }
 
 /* MOVIE/TV INFO */
@@ -789,11 +807,11 @@ img.hover-shadow {
 .cast-list {
     top: 10px;
     padding: 0;
+    margin: auto;
     margin-bottom: 30px;
 }
 
 .cast-header {
-    margin-left: 45px;
     margin-bottom: 10px;
     font-size: 1.4rem;
 }
@@ -801,14 +819,14 @@ img.hover-shadow {
 .cast-list ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     line-height: 1.4em;
-    margin-left: 40px;
+    margin: auto;
 }
 
 .cast-list li {
     display: table-cell;
-    width: 130px;
+    width: 11.5%;
     height: auto;
     background: #ffffff;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.274);
@@ -838,7 +856,6 @@ img.hover-shadow {
 .full-cast-link {
     position: relative;
     color: blueviolet;
-    margin-left: 50px;
     top: 10px;
     text-decoration: none;
 }
@@ -1076,18 +1093,18 @@ img.hover-shadow {
 
 .page-nav {
     display: flex;
-    margin-bottom: 20px;
-    padding: 0;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 20px auto;
     width: 100%;
 }
 
-.page-nav p {
-    margin-right: 10px;
-    padding: 0;
+.page-nav > * {
+    margin: 0 10px;
 }
 
 .page-nav a {
-    margin-right: 10px;
+    text-decoration: none;
     transition: 0.2s ease;
 }
 
@@ -1098,45 +1115,66 @@ img.hover-shadow {
 /* PEOPLE */
 
 .people-list {
-    text-align: center;
     width: 80%;
-    margin: 100px auto;
+    margin: auto;
 }
 
-.people-list a:hover {
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin: 70px auto;
+    margin-bottom: 0;
+}
+
+.list a {
+    text-decoration: none;
+}
+
+.list a:hover {
     text-decoration: none;
 }
 
 .person {
-    display: inline-block;
+    width: 220px;
     margin: 10px;
     transition: 0.2s ease;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.329);
 }
 
 .person:hover {
     transform: scale(0.98);
 }
 
-.person img {
-    border-radius: 2px;
+.person img { 
+    width: 100%;
 }
 
 .person p {
     color: black;
+    background-color: white;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1rem;
     letter-spacing: 1px;
     text-align: center;
-    margin: 5px auto;
+    padding: 10px;
+}
+
+.pages {
+    display: block;
+    margin: 0;
 }
 
 /* PERSON */
 
 .person-details {
     display: flex;
-    width: 65%;
-    margin: 100px auto;
+    width: 75%;
+    margin: 80px auto;
     margin-bottom: 0;
 }
 
@@ -1145,13 +1183,19 @@ img.hover-shadow {
 }
 
 #person-profile {
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.452);
+    height: 400px;
+    width: auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.459);
 }
 
 .info-right {
+    min-height: 400px;
+    background-color: white;
     display: inline-block;
-    margin: 50px;
+    margin: 20px;
+    padding: 20px;
     margin-top: 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.267);
 }
 
 .info-right .name {
@@ -1284,7 +1328,15 @@ img.hover-shadow {
 .credits-header {
     width: 60%;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 80px;
+}
+
+.credits-header a {
+    text-decoration: none;
+}
+
+.cast-and-crew a {
+    text-decoration: none;
 }
 
 .credits-header div {
@@ -1315,6 +1367,7 @@ img.hover-shadow {
 .credits-name {
     font-weight: 600;
     list-style-type: none;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -1352,14 +1405,18 @@ img.hover-shadow {
 }
 
 .credits-cast {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
     width: 100%;
     margin: auto;
 }
 
 .credits-cast li {
-    display: inline-block;
+    display: flex;
     background: white;
-    width: 45%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.356);
+    width: 49%;
     margin: 3px;
 }
 

@@ -21,15 +21,7 @@
                     ><span class="word">The</span> Movie
                     <span class="word">Hub</span></a
                 >
-                <div id="search-area" class="search-area">
-                    <i class="fa fa-search search-icon"></i>
-                    <input
-                        type="text"
-                        id="searchbox"
-                        placeholder="Search The Movie Hub"
-                    />
-                    <span class="close-search">&times;</span>
-                </div>
+                
                 <nav id="menu" class="menu">
                     <ul class="list-inline">
                         <li class="list-inline-item">
@@ -49,9 +41,20 @@
                     </ul>
                 </nav>
             </div>
+            <div id="search-area" class="search-area">
+                <i class="fa fa-search search-icon"></i>
+                <input
+                    type="text"
+                    id="searchbox"
+                    placeholder="Search The Movie Hub"
+                />
+                <span class="close-search">&times;</span>
+            </div>
         </header>
 
-        <div class="charts container">
+        <div class="shade"></div>
+
+        <section class="charts">
             <div class="trending">
                 <div class="charts-header">
                     <i class="fas fa-hashtag"></i>
@@ -85,7 +88,7 @@
                     >
                 </div>
             </div>
-        </div>
+        </section>
 
         <footer class="footer">
             <p>
@@ -111,32 +114,29 @@
         <script src="js/search.js"></script>
 
         <script>
-            $(document).ready(() => {
-                $(function () {
-                    $(".popular-movies").mousewheel(function (event, delta) {
-                        this.scrollLeft -= delta * 80;
-                        this.scrollRight -= delta * 80;
-                        event.preventDefault();
-                    });
-                });
-            });
 
             $(".search").click(function () {
                 $(".search-area").fadeIn();
                 $(".branding").fadeOut();
+                document.querySelector(".shade").style.visibility = "visible";
+                document.querySelector(".shade").style.opacity = "1";
                 $(".menu").fadeOut();
+                $("body").addClass("stop-scrolling");
             });
 
             $(".close-search").click(function () {
                 $(".search-area").fadeOut();
                 $(".branding").fadeIn();
+                document.querySelector(".shade").style.visibility = "hidden";
+                document.querySelector(".shade").style.opacity = "0";
                 $(".menu").fadeIn();
+                $("body").removeClass("stop-scrolling");
             });
 
             var prevScrollPos = window.pageYOffset;
             window.onscroll = function () {
                 var currentScrollPos = window.pageYOffset;
-                if (prevScrollPos > currentScrollPos) {
+                if (prevScrollPos > currentScrollPos || currentScrollPos == 0) {
                     document.getElementById("navbar").style.top = "0";
                 } else {
                     document.getElementById("navbar").style.top = "-55px";

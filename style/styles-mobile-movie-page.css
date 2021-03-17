@@ -1,13 +1,6 @@
 @media only screen and (max-device-width: 1440px) {
 
-    .cast-list li {
-        width: 13%;
-    }
 
-    .cast-list li a img {
-        width: 100%;
-        height: auto;
-    }
 }
 
 @media only screen and (max-device-width: 1024px) {
@@ -24,13 +17,9 @@
     }
 
     .cast-list li {
-        width: 13%;
+        width: 11%;
     }
 
-    .cast-list li a img {
-        width: 100%;
-        height: auto;
-    }
 }
 
 @media only screen and (max-device-width: 900px) {
@@ -68,13 +57,33 @@
     }
 
     .cast-list li {
-        width: 22%;
+        min-width: 11%;
     }
 
     .cast-list li a img {
         width: 100%;
         height: auto;
     }
+}
+
+@media only screen and (max-device-width: 800px) {
+
+    .cast-list ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .cast-list li {
+        display: flex;
+        width: 48%;
+        height: 100px;
+    }
+
+    .cast-list li a img {
+        height: 100px;
+        width: auto;
+    }
+
 }
 
 @media only screen and (max-device-width: 600px) {
@@ -121,6 +130,14 @@
     }
 }
 
+@media only screen and (max-device-width: 525px) {
+
+    .cast-list li {
+        width: 100%;
+    }
+
+}
+
 @media only screen and (max-device-width: 425px) {
 
     .top-details {
@@ -150,20 +167,6 @@
         margin-bottom: 10px;
     }
 
-    .cast-list ul {
-        margin: auto;
-        margin-bottom: 10px;
-    }
-
-    .cast-list li {
-        width: 47%;
-    }
-
-    .cast-list li a img {
-        width: 100%;
-        height: auto;
-    }
-
 }
 
 
@@ -183,7 +186,4 @@
         font-size: 1.8rem;
     }
 
-    .cast-list li {
-        width: 45%;
-    }
 } 
