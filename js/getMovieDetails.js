@@ -46,12 +46,12 @@ function getMovie() {
                         <h3 class="title">${
                             movie.title
                         }<span class="date">(${date})</span></h3>
-                        <h3 class="score"><i class="fas fa-star"></i><span id="score-number">${
+                        <div class="score"><i class="fas fa-star"></i><span id="score-number">${
                             movie.vote_average
-                        }</span></h3>
+                        }</span>
                         <span class="vote-count selected-vote-count">${
                             movie.vote_count + " " + word
-                        }</span>
+                        }</span></div>
                         ${genres}
                         <div class="overview"><p>${movie.overview}</p></div>
                     </div>

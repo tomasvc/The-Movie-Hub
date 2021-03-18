@@ -358,6 +358,7 @@ body {
 .selected-vote-count {
     position: relative;
     display: inline;
+    font-weight: 200;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid #3de23daf;
     border-radius: 6px;
@@ -661,12 +662,11 @@ img.hover-shadow {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    line-height: 1.4em;
     margin: auto;
 }
 
 .cast-list li {
-    display: table-cell;
+    list-style-type: none;
     width: 11.5%;
     height: auto;
     background: #ffffff;
@@ -800,9 +800,8 @@ img.hover-shadow {
 
 .slider li {
     padding: 2px;
-    height: 230px;
+    max-height: 230px;
     list-style-type: none;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.144);
     margin-bottom: 5px;
     transition: 0.2s ease;
 }

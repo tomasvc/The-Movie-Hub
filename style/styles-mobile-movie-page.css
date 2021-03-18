@@ -132,7 +132,42 @@
 
 @media only screen and (max-device-width: 525px) {
 
-    .cast-list li {
+    .score, .genres {
+        text-align: center;
+    }
+
+    .score {
+        width: 95%;
+    }
+
+    .bottom-details {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .reviews ul {
+        width: 100%;
+    }
+
+    .cast-list, .recommendations {
+        width: 100%;
+    }
+
+    .full-cast-link {
+        font-size: 0.8rem;
+        top: 5px;
+        left: 4px;
+    }
+
+    .cast-header, .reviews-header, .reviews-source, .slider-header {
+        text-align: center;
+    }
+
+    .reviews-source {
+        font-size: 0.8rem;
+    }
+
+    .cast-list ul li {
         width: 100%;
     }
 

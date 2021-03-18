@@ -152,10 +152,6 @@
     overflow: hidden;
 }
 
-@media only screen and (max-device-width: 900px) {
-
-}
-
 @media only screen and (max-device-width: 800px) {
     #menu ul {
         text-align: center;
