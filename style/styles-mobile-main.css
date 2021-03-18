@@ -6,23 +6,6 @@
         width: 100%;
     }
 
-    .search-area {
-        width: 50%;
-    }
-
-    #searchbox {
-        left: 0;
-        width: 100%;
-    }
-
-    .search-icon {
-        left: 10px;
-    }
-
-    .close-search {
-        right: -20px;
-    }
-
     .charts {
         display: block;
         margin: 80px auto;
@@ -46,14 +29,6 @@
         width: 100%;
     }
 
-    #branding {
-        float: left;
-    }
-
-    .menu {
-        float: right;
-    }
-
     .charts {
         width: 100%;
         margin: auto;
@@ -63,9 +38,6 @@
     .trending,
     .now-playing,
     .upcoming {
-        width: auto;
-        height: auto;
-        margin: auto;
         margin-top: 60px;
     }
 
@@ -89,33 +61,7 @@
     html,
     body {
         width: 100%;
-    }
-
-    #menu ul {
-        text-align: center;
-    }
-
-    #branding {
-        display: block;
-        text-align: center;
-    }
-
-    .search-area {
-        width: 70%;
-    }
-
-    #searchbox {
-        left: 0;
-        width: 100%;
-    }
-
-    .search-icon {
-        left: 10px;
-    }
-
-    .close-search {
-        right: -20px;
-    }
+    } 
 
     .charts {
         margin: auto;
@@ -140,37 +86,7 @@
     body {
         width: 100%;
     }
-
-    #menu {
-        width: 100%;
-    }
-
-    #menu ul {
-        text-align: center;
-    }
-
-    #branding {
-        float: none;
-        text-align: center;
-    }
-
-    .search-area {
-        width: 70%;
-    }
-
-    #searchbox {
-        left: 0;
-        width: 100%;
-    }
-
-    .search-icon {
-        left: 10px;
-    }
-
-    .close-search {
-        right: -20px;
-    }
-
+    
     .charts {
         width: 100%;
         margin: auto;
@@ -201,49 +117,6 @@
         margin: auto;
         margin-top: 100px;
     }
-
-}
-
-@media only screen and (max-device-width: 400px) {
-    html,
-    body {
-        width: 100%;
-    }
-
-    .container {
-        display: inline-block;
-        width: 100%;
-    }
-
-    #menu ul {
-        text-align: center;
-    }
-
-    #branding {
-        display: block;
-        text-align: center;
-    }
-
-    .search-area {
-        width: 70%;
-        left: 0;
-        margin: auto;
-    }
-
-    #searchbox {
-        left: 0;
-        width: 100%;
-        margin: auto;
-    }
-
-    .search-icon {
-        left: 10px;
-    }
-
-    .close-search {
-        right: -20px;
-    }
-
 
 }
 

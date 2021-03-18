@@ -9,6 +9,7 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="style/styles.css" />
+        <link rel="stylesheet" href="style/styles-menu.css" />
         <link rel="stylesheet" href="style/styles-mobile-main.css" />
         <link rel="stylesheet" href="style/styles-mobile-movie-page.css" />
         <link rel="icon" href="img/icon.png" />
@@ -117,6 +118,9 @@
                     document.getElementById("navbar").style.top = "0";
                 } else {
                     document.getElementById("navbar").style.top = "-55px";
+                    if ($(window).width() < 550) {
+                        document.getElementById("navbar").style.top = "-85px";
+                    }
                 }
                 prevScrollPos = currentScrollPos;
             };

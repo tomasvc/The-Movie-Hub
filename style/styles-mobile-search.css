@@ -1,24 +1,37 @@
 @media only screen and (max-device-width: 1024px) {
-    .item-overview {
-        top: 120px;
-        left: 220px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+
 }
 
 @media only screen and (max-device-width: 900px) {
 }
 
 @media only screen and (max-device-width: 800px) {
+    .results {
+        width: 95%;
+    }
 }
 
 @media only screen and (max-device-width: 600px) {
 }
 
 @media only screen and (max-device-width: 500px) {
+
+    .results-item {
+        margin-bottom: 10px;
+    }
+
+    .left, .left img {
+        width: 100px;
+        height: auto;
+    }
+
+    .item-title {
+        font-size: 1rem;
+    }
+
+    .item-overview {
+        display: none;
+    }
 }
 
 @media only screen and (max-device-width: 420px) {

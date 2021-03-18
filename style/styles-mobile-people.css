@@ -35,24 +35,11 @@
 
 }
 
-@media only screen and (max-device-width: 800px) {
-
-
-
-}
-
 @media only screen and (max-device-width: 500px) {
 
     .person {
         width: 100px;
     }
-
-}
-
-@media only screen and (max-device-width: 425px) {
-
-
-
 
 }
 
@@ -62,8 +49,4 @@
         width: 80px;
     }
 
-}
-
-@media only screen and (max-device-width: 320px) {
-    
 }
