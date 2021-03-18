@@ -75,14 +75,7 @@ function getUpcomingMovieCharts(x) {
 }
 
 function getCharts(url, className) {
-    fetch(url, {
-        method: "GET",
-        mode: "cors",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-        },
-    })
+    fetch(url)
         .then((res) => {
             res = res
                 .json()
