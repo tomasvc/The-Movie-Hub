@@ -1,10 +1,7 @@
 @media only screen and (max-device-width: 1440px) {
-
-
 }
 
 @media only screen and (max-device-width: 1024px) {
-
     .genres {
         display: inline-block;
         left: 0;
@@ -19,11 +16,9 @@
     .cast-list li {
         width: 11%;
     }
-
 }
 
 @media only screen and (max-device-width: 900px) {
-
     .top-details {
         width: 90%;
     }
@@ -39,7 +34,8 @@
         min-height: 2000px;
     }
 
-    .images, .videos {
+    .images,
+    .videos {
         width: 95%;
     }
 
@@ -67,7 +63,6 @@
 }
 
 @media only screen and (max-device-width: 800px) {
-
     .cast-list ul {
         flex-direction: row;
         flex-wrap: wrap;
@@ -83,11 +78,9 @@
         height: 100px;
         width: auto;
     }
-
 }
 
 @media only screen and (max-device-width: 600px) {
-
     .top-details {
         flex-wrap: wrap;
         width: 100%;
@@ -131,8 +124,8 @@
 }
 
 @media only screen and (max-device-width: 525px) {
-
-    .score, .genres {
+    .score,
+    .genres {
         text-align: center;
     }
 
@@ -149,7 +142,8 @@
         width: 100%;
     }
 
-    .cast-list, .recommendations {
+    .cast-list,
+    .recommendations {
         width: 100%;
     }
 
@@ -159,7 +153,10 @@
         left: 4px;
     }
 
-    .cast-header, .reviews-header, .reviews-source, .slider-header {
+    .cast-header,
+    .reviews-header,
+    .reviews-source,
+    .slider-header {
         text-align: center;
     }
 
@@ -170,11 +167,9 @@
     .cast-list ul li {
         width: 100%;
     }
-
 }
 
 @media only screen and (max-device-width: 425px) {
-
     .top-details {
         margin-top: 50px;
     }
@@ -201,12 +196,9 @@
         margin: 0;
         margin-bottom: 10px;
     }
-
 }
 
-
 @media only screen and (max-device-width: 320px) {
-
     .top-details {
         margin-top: 80px;
     }
@@ -220,5 +212,4 @@
     .title {
         font-size: 1.8rem;
     }
-
-} 
+}

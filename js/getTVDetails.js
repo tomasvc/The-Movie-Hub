@@ -32,7 +32,10 @@ function getTV() {
 
             let date = tv.first_air_date.substring(0, 4);
 
-            document.querySelector(".backdrop").style.backgroundImage = 'url(https://image.tmdb.org/t/p/original' + tv.backdrop_path + ')'
+            document.querySelector(".backdrop").style.backgroundImage =
+                "url(https://image.tmdb.org/t/p/original" +
+                tv.backdrop_path +
+                ")";
 
             string += `
                         <div class="details-left">
@@ -125,18 +128,18 @@ function getTV() {
             let images = response.data;
             let string = ``;
             let modalString = ``;
-            
+
             string += `
                         <h4 class="images-header">Images</h4>
                         <ul>`;
 
-                        for (let i = 0; i <= 5; i++) {
-                            string += `<li><img src="https://image.tmdb.org/t/p/w300/${
-                                images.backdrops[i].file_path
-                            }" onclick="openModal();currentSlide(${i + 1})"></li>`;
-                        }
+            for (let i = 0; i <= 5; i++) {
+                string += `<li><img src="https://image.tmdb.org/t/p/w300/${
+                    images.backdrops[i].file_path
+                }" onclick="openModal();currentSlide(${i + 1})"></li>`;
+            }
 
-                            string += `<li><img src="https://image.tmdb.org/t/p/w300/${images.posters[0].file_path}" onclick="openModal();currentSlide(7)" height="173"></li>
+            string += `<li><img src="https://image.tmdb.org/t/p/w300/${images.posters[0].file_path}" onclick="openModal();currentSlide(7)" height="173"></li>
                             <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[1].file_path}" onclick="openModal();currentSlide(8)" height="173"></li>
                             <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[2].file_path}" onclick="openModal();currentSlide(9)" height="173"></li>
                         </ul>
@@ -144,15 +147,15 @@ function getTV() {
 
             modalString += `
                             <span class="close cursor" onclick="closeModal()">&times;</span>
-                            <div class="modal-content">`
+                            <div class="modal-content">`;
 
-                            for (let i = 0; i <= 5; i++) {
-                                modalString += `<div class="slides">
+            for (let i = 0; i <= 5; i++) {
+                modalString += `<div class="slides">
                                                                     <img src="https://image.tmdb.org/t/p/original/${images.backdrops[i].file_path}" style="width: 100%">
                                                                 </div>`;
-                            }
-                                
-                                modalString += `<div class="slides">
+            }
+
+            modalString += `<div class="slides">
                                     <img src="https://image.tmdb.org/t/p/original/${images.posters[0].file_path}" style="width: 50%">
                                 </div>
                                 <div class="slides">
@@ -176,6 +179,7 @@ function getTV() {
                         <h4 class="images-header">Images</h4>
                         <p class="error-message">No images available.</p>`;
             $(".images").append(string);
+            console.log(err);
         });
 
     axios
@@ -219,6 +223,7 @@ function getTV() {
                     <p class="error-message">No videos available.</p>`;
 
             $(".videos").append(string);
+            console.log(err);
         });
 
     /* CAST */
@@ -304,6 +309,7 @@ function getTV() {
             <p class="error-message black-text">No reviews available.</p>
         `;
             $(".reviews").append(string);
+            console.log(err);
         });
 
     /* RECOMMENDATIONS */
@@ -359,5 +365,6 @@ function getTV() {
                         <p class="error-message">No recommendations available.</p>`;
 
             $(".recommendations").append(string);
+            console.log(err);
         });
 }

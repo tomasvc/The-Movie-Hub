@@ -52,6 +52,8 @@
             </div>
         </header>
 
+        <div class="shade"></div>
+
         <div class="credits-header"></div>
         <div class="cast-and-crew"></div>
 
@@ -75,48 +77,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="js/jquery.mousewheel.min.js"></script>
+        <script src="js/navigation.js"></script>
         <script src="js/tv-shows.js"></script>
         <script src="js/search.js"></script>
         <script src="js/getTVCredits.js"></script>
 
         <script>
             getTVCredits();
-
-            $(document).ready(() => {
-                $(function () {
-                    $(".popular-movies").mousewheel(function (event, delta) {
-                        this.scrollLeft -= delta * 80;
-                        this.scrollRight -= delta * 80;
-                        event.preventDefault();
-                    });
-                });
-            });
-
-            $(".search").click(function () {
-                $(".search-area").fadeIn();
-                $(".branding").fadeOut();
-                $(".menu").fadeOut();
-            });
-
-            $(".close-search").click(function () {
-                $(".search-area").fadeOut();
-                $(".branding").fadeIn();
-                $(".menu").fadeIn();
-            });
-
-            var prevScrollPos = window.pageYOffset;
-            window.onscroll = function () {
-                var currentScrollPos = window.pageYOffset;
-                if (prevScrollPos > currentScrollPos) {
-                    document.getElementById("navbar").style.top = "0";
-                } else {
-                    document.getElementById("navbar").style.top = "-55px";
-                    if ($(window).width() < 550) {
-                        document.getElementById("navbar").style.top = "-85px";
-                    }
-                }
-                prevScrollPos = currentScrollPos;
-            };
         </script>
     </body>
 </html>

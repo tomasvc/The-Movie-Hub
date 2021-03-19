@@ -21,6 +21,9 @@ function getTVCredits() {
         <p class="credits-head">Full Cast & Crew</p></div>`;
 
             $(".credits-header").append(string);
+        })
+        .catch((err) => {
+            console.log(err);
         });
 
     axios
@@ -205,5 +208,8 @@ function getTVCredits() {
             $(".cast-and-crew").append(crew);
             $(".cast-and-crew").append(cast);
             $(".cast-and-crew").append(crew_more);
+        })
+        .catch((err) => {
+            console.log(err);
         });
 }

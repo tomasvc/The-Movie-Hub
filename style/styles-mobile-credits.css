@@ -1,6 +1,6 @@
 @media only screen and (max-device-width: 800px) {
-
-    .credits-header, .cast-and-crew {
+    .credits-header,
+    .cast-and-crew {
         width: 80%;
     }
 
@@ -24,17 +24,14 @@
 }
 
 @media only screen and (max-device-width: 600px) {
-
-    .credits-header, .cast-and-crew {
+    .credits-header,
+    .cast-and-crew {
         width: 95%;
     }
-
 }
 
 @media only screen and (max-device-width: 500px) {
-
     .credits-cast li {
         width: 100%;
     }
-
 }

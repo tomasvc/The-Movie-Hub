@@ -64,7 +64,7 @@ function getMovieCredits() {
                 }
             }
 
-            crew += `<p class="credits-name">Cast</p>`
+            crew += `<p class="credits-name">Cast</p>`;
 
             let cast = `<ul class="credits-cast">`;
 

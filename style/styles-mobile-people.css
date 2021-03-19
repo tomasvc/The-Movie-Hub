@@ -1,13 +1,10 @@
 @media only screen and (max-device-width: 1440px) {
-
     .person {
         max-width: 200px;
     }
-
 }
 
 @media only screen and (max-device-width: 1024px) {
-
     .person {
         max-width: 150px;
     }
@@ -15,11 +12,9 @@
     .person p {
         font-size: 12px;
     }
-
 }
 
 @media only screen and (max-device-width: 900px) {
-
     .people-list {
         width: 95%;
     }
@@ -32,21 +27,16 @@
     .person p {
         font-size: 10px;
     }
-
 }
 
 @media only screen and (max-device-width: 500px) {
-
     .person {
         width: 100px;
     }
-
 }
 
 @media only screen and (max-device-width: 360px) {
-
     .person {
         width: 80px;
     }
-
 }

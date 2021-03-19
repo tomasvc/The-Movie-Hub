@@ -5,12 +5,12 @@
 }
 
 @media only screen and (max-device-width: 500px) {
-
     .results-item {
         margin-bottom: 10px;
     }
 
-    .left, .left img {
+    .left,
+    .left img {
         width: 100px;
         height: auto;
     }

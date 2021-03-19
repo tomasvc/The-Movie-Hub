@@ -2,16 +2,18 @@ $(document).ready(() => {
     getMovies();
 });
 
-
 function getFullCharts(url, page) {
     $(".chart-list").html("");
 
-    fetch(
-        url +
-            page +
-            "&language=en-US&region=US&api_key=4f3fdbd8c5943719506e53611dd7be34"
-    ).then((res) => {
-        res = res.json().then((data) => {
+    axios
+        .get(
+            url +
+                page +
+                "&language=en-US&region=US&api_key=4f3fdbd8c5943719506e53611dd7be34"
+        )
+        .then((response) => {
+            data = response.data;
+
             let list = ``;
             let word = "";
 
@@ -30,7 +32,6 @@ function getFullCharts(url, page) {
                           data.results[i].poster_path
                         : "img/poster-blank.jpg"
                 }'>`;
-                
             }
 
             list += `</ul>`;
@@ -58,8 +59,10 @@ function getFullCharts(url, page) {
             list += `</div>`;
 
             $(".chart-list").append(list);
+        })
+        .catch((err) => {
+            console.log(err);
         });
-    });
 }
 
 function getTrendingMovieCharts(x) {
@@ -75,28 +78,26 @@ function getUpcomingMovieCharts(x) {
 }
 
 function getCharts(url, className) {
-    fetch(url)
-        .then((res) => {
-            res = res
-                .json()
+    axios
+        .get(url)
 
-                .then((data) => {
-                    let list = "";
-                    let word = "";
+        .then((response) => {
+            data = response.data;
 
-                    for (i = 0; i <= 11; i++) {
-                        if (data.results[i].vote_count == 1) {
-                            word = "vote";
-                        } else {
-                            word = "votes";
-                        }
+            let list = "";
+            let word = "";
 
-                        list += `<a onclick="movieSelected(${data.results[i].id})" href='#'><li id="charts-item"><img onlick="movieSelected(${data.results[i].id})" class="charts-poster" src='https://image.tmdb.org/t/p/w200${data.results[i].poster_path}'>`;
-                
-                    }
+            for (i = 0; i <= 11; i++) {
+                if (data.results[i].vote_count == 1) {
+                    word = "vote";
+                } else {
+                    word = "votes";
+                }
 
-                    $(className).append(list);
-                });
+                list += `<a onclick="movieSelected(${data.results[i].id})" href='#'><li id="charts-item"><img onlick="movieSelected(${data.results[i].id})" class="charts-poster" src='https://image.tmdb.org/t/p/w200${data.results[i].poster_path}'>`;
+            }
+
+            $(className).append(list);
         })
         .catch((err) => {
             console.log(err);

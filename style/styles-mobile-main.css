@@ -54,14 +54,13 @@
         display: block;
         margin-left: 12px;
     }
-
 }
 
 @media only screen and (max-device-width: 800px) {
     html,
     body {
         width: 100%;
-    } 
+    }
 
     .charts {
         margin: auto;
@@ -86,7 +85,7 @@
     body {
         width: 100%;
     }
-    
+
     .charts {
         width: 100%;
         margin: auto;
@@ -109,7 +108,6 @@
     .charts-header i {
         font-size: 20px;
     }
-
 }
 
 @media only screen and (max-device-width: 420px) {
@@ -117,15 +115,12 @@
         margin: auto;
         margin-top: 100px;
     }
-
 }
 
 @media only screen and (max-device-width: 320px) {
-
     #charts-item {
         display: inline-block;
         width: 50%;
         height: auto;
     }
-
 }

@@ -22,7 +22,7 @@
                     ><span class="word">The</span> Movie
                     <span class="word">Hub</span></a
                 >
-                
+
                 <nav id="menu" class="menu">
                     <ul class="list-inline">
                         <li class="list-inline-item">
@@ -81,7 +81,7 @@
                     <i class="far fa-clock"></i>
                     <span>Upcoming</span>
                 </div>
-                    
+
                 <div>
                     <ul class="upcoming-list"></ul>
                     <a href="upcoming.html" class="charts-more"
@@ -92,10 +92,12 @@
         </section>
 
         <footer class="footer">
+
             <p>
                 Copyright 2021 The Movie Hub | Website designed and developed by
                 Tomas Valevicius
             </p>
+            
             <p>
                 Powered by
                 <a
@@ -104,6 +106,7 @@
                     >TMDb API</a
                 >
             </p>
+
         </footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -111,47 +114,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="js/jquery.mousewheel.min.js"></script>
+        <script src="js/navigation.js"></script>
         <script src="js/movies.js"></script>
         <script src="js/search.js"></script>
 
-        <script>
-            $(".search").click(function () {
-                $(".search-area").addClass("show-search");
-                // document.querySelector(".search-area").style.visibility = "visible";
-                // document.querySelector(".search-area").style.opacity = "1";
-                //$(".search-area").fadeIn();
-                $(".branding").fadeOut();
-                document.querySelector(".shade").style.visibility = "visible";
-                document.querySelector(".shade").style.opacity = "1";
-                $(".menu").fadeOut();
-                $("body").addClass("stop-scrolling");
-            });
-
-            $(".close-search").click(function () {
-                $(".search-area").removeClass("show-search");
-                // document.querySelector(".search-area").style.visibility = "hidden";
-                // document.querySelector(".search-area").style.opacity = "0";
-                $(".search-area").fadeOut();
-                $(".branding").fadeIn();
-                document.querySelector(".shade").style.visibility = "hidden";
-                document.querySelector(".shade").style.opacity = "0";
-                $(".menu").fadeIn();
-                $("body").removeClass("stop-scrolling");
-            });
-
-            var prevScrollPos = window.pageYOffset;
-            window.onscroll = function () {
-                var currentScrollPos = window.pageYOffset;
-                if (prevScrollPos > currentScrollPos || currentScrollPos == 0) {
-                    document.getElementById("navbar").style.top = "0";
-                } else {
-                    document.getElementById("navbar").style.top = "-55px";
-                    if ($(window).width() < 550) {
-                        document.getElementById("navbar").style.top = "-85px";
-                    }
-                }
-                prevScrollPos = currentScrollPos;
-            };
-        </script>
     </body>
+
 </html>

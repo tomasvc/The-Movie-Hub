@@ -11,7 +11,7 @@ function getTVs() {
             var trending = "<ul>";
             let word = "";
 
-            for (i = 0; i <= 7; i++) {
+            for (i = 0; i <= 11; i++) {
                 if (response.data.results[i].vote_count == 1) {
                     word = "vote";
                 } else {
@@ -26,12 +26,6 @@ function getTVs() {
                           response.data.results[i].poster_path
                         : "img/poster-blank.jpg"
                 }'>`;
-                trending += `<p class="charts-title">${response.data.results[i].name}</p>`;
-                trending += `<div class="charts-score"><i id="charts-star" class="fas fa-star"></i><span class="vote-average">${
-                    response.data.results[i].vote_average
-                }</span><span class="vote-count">(${
-                    response.data.results[i].vote_count + " " + word
-                })</span></div></li></a>`;
             }
 
             trending += "</ul>";
@@ -52,7 +46,7 @@ function getTVs() {
             var now_playing = `<ul>`;
             let word = "";
 
-            for (i = 0; i <= 7; i++) {
+            for (i = 0; i <= 11; i++) {
                 if (response.data.results[i].vote_count == 1) {
                     word = "vote";
                 } else {
@@ -66,13 +60,7 @@ function getTVs() {
                         ? "https://image.tmdb.org/t/p/w200" +
                           response.data.results[i].poster_path
                         : "img/poster-blank.jpg"
-                }'>`;
-                now_playing += `<p class="charts-title">${response.data.results[i].name}</p>`;
-                now_playing += `<div class="charts-score"><i id="charts-star" class="fas fa-star"></i><span class="vote-average">${
-                    response.data.results[i].vote_average
-                }</span><span class="vote-count">(${
-                    response.data.results[i].vote_count + " " + word
-                })</span></div></li></a>`;
+                }'></li></a>`;
             }
 
             now_playing += `</ul>`;
@@ -93,7 +81,7 @@ function getTVs() {
             var upcoming = `<ul>`;
             let word = "";
 
-            for (i = 0; i <= 7; i++) {
+            for (i = 0; i <= 11; i++) {
                 if (response.data.results[i].vote_count == 1) {
                     word = "vote";
                 } else {
@@ -107,13 +95,7 @@ function getTVs() {
                         ? "https://image.tmdb.org/t/p/w200" +
                           response.data.results[i].poster_path
                         : "img/poster-blank.jpg"
-                }'>`;
-                upcoming += `<p class="charts-title">${response.data.results[i].name}</p>`;
-                upcoming += `<div class="charts-score"><i id="charts-star" class="fas fa-star"></i><span class="vote-average">${
-                    response.data.results[i].vote_average
-                }</span><span class="vote-count">(${
-                    response.data.results[i].vote_count + " " + word
-                })</span></div></li></a>`;
+                }'></li></a>`;
             }
 
             upcoming += `</ul>`;
@@ -169,6 +151,9 @@ function changeSeason() {
                         tv.seasons[i].overview;
                 }
             }
+        })
+        .catch((err) => {
+            console.log(err);
         });
 }
 
@@ -227,6 +212,9 @@ function getTrendingTVCharts(x) {
             list += `</div>`;
 
             $(".chart-list").append(list);
+        })
+        .catch((err) => {
+            console.log(err);
         });
 }
 
@@ -285,6 +273,9 @@ function getPlayingTVCharts(x) {
             list += `</div>`;
 
             $(".chart-list").append(list);
+        })
+        .catch((err) => {
+            console.log(err);
         });
 }
 
@@ -343,5 +334,8 @@ function getUpcomingTVCharts(x) {
             list += `</div>`;
 
             $(".chart-list").append(list);
+        })
+        .catch((err) => {
+            console.log(err);
         });
 }
