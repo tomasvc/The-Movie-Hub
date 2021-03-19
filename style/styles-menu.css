@@ -81,9 +81,18 @@
 .search-area {
     position: absolute;
     top: 7px;
+    left: 11%;
     width: 100%;
     display: none;
     margin: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s ease;
+}
+
+.show-search {
+    visibility: visible;
+    opacity: 1;
 }
 
 #searchbox {
@@ -101,6 +110,9 @@
 }
 
 .search-icon {
+    position: absolute;
+    top: 14px;
+    left: 25px;
     font-size: 14px;
     color: #888;
     cursor: default;

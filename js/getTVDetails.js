@@ -29,17 +29,14 @@ function getTV() {
             }
 
             let string = ``;
+
             let date = tv.first_air_date.substring(0, 4);
+
+            document.querySelector(".backdrop").style.backgroundImage = 'url(https://image.tmdb.org/t/p/original' + tv.backdrop_path + ')'
+
             string += `
-                    <div class="backdrop">
-                        <div class="backdrop-image" style="background-image: url(https://image.tmdb.org/t/p/original${
-                            tv.backdrop_path
-                        })">
-                        </div>
-                        <div class="backdrop-film"></div>
-                    <div class="top-details container">
                         <div class="details-left">
-                            <img id="poster" class="img-responsive" src="${
+                            <img class="img-responsive" src="${
                                 tv.poster_path != undefined
                                     ? "https://image.tmdb.org/t/p/w400" +
                                       tv.poster_path
@@ -63,11 +60,9 @@ function getTV() {
                             ${genres}
                             <p id="overview" class="overview">${tv.overview}</p>
                         </div>
-                    </div>
-                </div>
             `;
 
-            $(".details").append(string);
+            $(".top-details").append(string);
             $("title").html(tv.name + " &ndash; The Movie Hub");
         })
         .catch((err) => {
@@ -130,16 +125,18 @@ function getTV() {
             let images = response.data;
             let string = ``;
             let modalString = ``;
+            
             string += `
                         <h4 class="images-header">Images</h4>
-                        <ul>
-                            <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[0].file_path}" onclick="openModal();currentSlide(1)"></li>
-                            <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[1].file_path}" onclick="openModal();currentSlide(2)"></li>
-                            <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[2].file_path}" onclick="openModal();currentSlide(3)"></li>
-                            <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[3].file_path}" onclick="openModal();currentSlide(4)"></a></li>
-                            <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[4].file_path}" onclick="openModal();currentSlide(5)"></a></li>
-                            <li><img src="https://image.tmdb.org/t/p/w300/${images.backdrops[5].file_path}" onclick="openModal();currentSlide(6)"></a></li>
-                            <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[0].file_path}" onclick="openModal();currentSlide(7)" height="173"></li>
+                        <ul>`;
+
+                        for (let i = 0; i <= 5; i++) {
+                            string += `<li><img src="https://image.tmdb.org/t/p/w300/${
+                                images.backdrops[i].file_path
+                            }" onclick="openModal();currentSlide(${i + 1})"></li>`;
+                        }
+
+                            string += `<li><img src="https://image.tmdb.org/t/p/w300/${images.posters[0].file_path}" onclick="openModal();currentSlide(7)" height="173"></li>
                             <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[1].file_path}" onclick="openModal();currentSlide(8)" height="173"></li>
                             <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[2].file_path}" onclick="openModal();currentSlide(9)" height="173"></li>
                         </ul>
@@ -147,27 +144,15 @@ function getTV() {
 
             modalString += `
                             <span class="close cursor" onclick="closeModal()">&times;</span>
-                            <div class="modal-content">
+                            <div class="modal-content">`
 
-                                <div class="slides">
-                                    <img src="https://image.tmdb.org/t/p/original/${images.backdrops[0].file_path}" style="width: 100%">
-                                </div>
-                                <div class="slides">
-                                    <img src="https://image.tmdb.org/t/p/original/${images.backdrops[1].file_path}" style="width: 100%">
-                                </div>
-                                <div class="slides">
-                                    <img src="https://image.tmdb.org/t/p/original/${images.backdrops[2].file_path}" style="width: 100%">
-                                </div>
-                                <div class="slides">
-                                    <img src="https://image.tmdb.org/t/p/original/${images.backdrops[3].file_path}" style="width: 100%">
-                                </div>
-                                <div class="slides">
-                                    <img src="https://image.tmdb.org/t/p/original/${images.backdrops[4].file_path}" style="width: 100%">
-                                </div>
-                                <div class="slides">
-                                    <img src="https://image.tmdb.org/t/p/original/${images.backdrops[5].file_path}" style="width: 100%">
-                                </div>
-                                <div class="slides">
+                            for (let i = 0; i <= 5; i++) {
+                                modalString += `<div class="slides">
+                                                                    <img src="https://image.tmdb.org/t/p/original/${images.backdrops[i].file_path}" style="width: 100%">
+                                                                </div>`;
+                            }
+                                
+                                modalString += `<div class="slides">
                                     <img src="https://image.tmdb.org/t/p/original/${images.posters[0].file_path}" style="width: 50%">
                                 </div>
                                 <div class="slides">
@@ -250,7 +235,7 @@ function getTV() {
             let cast = ``;
 
             if (tv.cast.length == 0) {
-                cast += `<p class="error-message">No cast information available</p>`;
+                cast += `<p class="error-message black-text">No cast information available</p>`;
             }
 
             for (let i = 0; i <= 6; i++) {
@@ -275,7 +260,7 @@ function getTV() {
             let string = ``;
             string += `
             <h4 class="cast-header">Top Cast</h4>
-            <p class="error-message">No cast information available.</p>
+            <p class="error-message black-text">No cast information available.</p>
         `;
 
             $(".cast").append(string);
@@ -316,7 +301,7 @@ function getTV() {
             let string = ``;
             string += `
             <h4 class="reviews-header">Reviews</h4>
-            <p class="error-message">No reviews available.</p>
+            <p class="error-message black-text">No reviews available.</p>
         `;
             $(".reviews").append(string);
         });
@@ -339,9 +324,9 @@ function getTV() {
                     <img src="https://image.tmdb.org/t/p/w300/${recommend.results[i].backdrop_path}">
                     <div>
                         <p>${recommend.results[i].name}</p>
-                        <i class="fas fa-star recommend-star"></i>
-                        <span>${recommend.results[i].vote_average}</span>
-                        <span>(${recommend.results[i].vote_count} votes)</span>
+                        <i class="fas fa-star slider-star"></i>
+                        <span class="slider-rating">${recommend.results[i].vote_average}</span>
+                        <span class="slider-votes">(${recommend.results[i].vote_count} votes)</span>
                     </div></a></li>`;
                     } else {
                         break;
@@ -349,7 +334,7 @@ function getTV() {
                 }
                 let string = ``;
                 string += `
-            <h4 class="recommendations-header">Recommended</h4>
+            <h4 class="slider-header">Recommended</h4>
             <ul col-8>`;
                 string += tv;
                 string += `</ul>
@@ -360,8 +345,8 @@ function getTV() {
                 let string = ``;
 
                 string += `
-                            <h4 class="recommendations-header">Recommended</h4>
-                            <p class="error-message">No recommendations available.</p>`;
+                            <h4 class="slider-header">Recommended</h4>
+                            <p class="error-message black-text">No recommendations available.</p>`;
 
                 $(".recommendations").append(string);
             }
@@ -370,7 +355,7 @@ function getTV() {
             let string = ``;
 
             string += `
-                        <h4 class="recommendations-header">Recommended</h4>
+                        <h4 class="slider-header">Recommended</h4>
                         <p class="error-message">No recommendations available.</p>`;
 
             $(".recommendations").append(string);

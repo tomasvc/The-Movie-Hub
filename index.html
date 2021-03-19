@@ -115,9 +115,11 @@
         <script src="js/search.js"></script>
 
         <script>
-
             $(".search").click(function () {
-                $(".search-area").fadeIn();
+                $(".search-area").addClass("show-search");
+                // document.querySelector(".search-area").style.visibility = "visible";
+                // document.querySelector(".search-area").style.opacity = "1";
+                //$(".search-area").fadeIn();
                 $(".branding").fadeOut();
                 document.querySelector(".shade").style.visibility = "visible";
                 document.querySelector(".shade").style.opacity = "1";
@@ -126,6 +128,9 @@
             });
 
             $(".close-search").click(function () {
+                $(".search-area").removeClass("show-search");
+                // document.querySelector(".search-area").style.visibility = "hidden";
+                // document.querySelector(".search-area").style.opacity = "0";
                 $(".search-area").fadeOut();
                 $(".branding").fadeIn();
                 document.querySelector(".shade").style.visibility = "hidden";

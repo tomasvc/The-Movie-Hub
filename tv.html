@@ -3,12 +3,6 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous"
-        />
-        <link
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
             integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
@@ -58,16 +52,22 @@
             </div>
         </header>
 
-        <div class="details">
-            <div class="images container"></div>
-            <div class="videos container"></div>
-        </div>
+        <section class="details">
+            <div class="backdrop">
+                <div class="backdrop-film"></div>
+            </div>
+            <div class="top-details"></div>
+            <div class="images"></div>
+            <div class="videos"></div>
+        </section>
+
         <div id="modal" class="modal"></div>
-        <div class="bottom-details container">
-            <div class="cast-list container"></div>
-            <div class="reviews container"></div>
-            <div class="recommendations container"></div>
-        </div>
+
+        <section class="bottom-details">
+            <div class="cast-list"></div>
+            <div class="reviews"></div>
+            <div class="recommendations slider"></div>
+        </section>
 
         <footer class="footer">
             <p>
