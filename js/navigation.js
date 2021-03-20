@@ -1,3 +1,14 @@
+$((window.addEventListener('resize', () => {
+    if ($(window).width() < 550) {
+        $(".header").css({ height: "70px" });
+        $(".search-area").css({ top: "15px" });
+    } else {
+        $(".header").css({ height: "40px" });
+        $(".search-area").css({ top: "15px" });
+    }
+})))
+
+
 $(".search").click(function () {
     if ($(window).width() < 550) {
         $(".header").css({ height: "70px" });
