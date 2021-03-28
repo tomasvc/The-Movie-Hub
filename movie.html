@@ -102,19 +102,16 @@
         <script>
             getMovie();
 
-            // setTimeout(function() {
+            $((window.addEventListener('resize', () => {
+                if($(window).width() < 600) {
+                    $('.arrow-left').css({ display: "none" })
+                    $('.arrow-right').css({ display: "none" })
+                } else {
+                    $('.arrow-left').css({ display: "inline" })
+                    $('.arrow-right').css({ display: "inline" })
+            }
+            })))            
 
-            //     $('.arrow-left').hide()
-
-            // }, 200)
-
-            $('#imageSlider').addEventListener('scroll', function() {
-                if($('#imageSlider').scrollX > 0) {
-                    $('.arrow-left').show().fadeIn();
-                }
-            })
-
-            
         </script>
     </body>
 </html>

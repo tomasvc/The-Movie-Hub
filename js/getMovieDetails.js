@@ -220,9 +220,10 @@ function getMovie() {
                 }
                 string += `
                 <h4 class="videos-header">Videos</h4>
-                <ul>`;
+                <span class="arrow arrow-left" onclick="getElementById('videoSlider').scrollBy(-520, 0)"><</span>
+                <ul id="videoSlider">`;
                 string += videos;
-                string += `</ul>`;
+                string += `</ul><span class="arrow arrow-right" onclick="getElementById('videoSlider').scrollBy(520, 0)">></span>`;
 
                 $(".videos").append(string);
             } else {
@@ -393,9 +394,10 @@ function getMovie() {
 
                 string += `
                     <h4 class="slider-header">Recommended</h4>
-                    <ul>`;
+                    <span class="white-arrow arrow-left" onclick="getElementById('recommendedSlider').scrollBy(-520, 0)"><</span>
+                    <ul id="recommendedSlider">`;
                 string += movies;
-                string += `</ul>`;
+                string += `</ul><span class="white-arrow arrow-right" onclick="getElementById('recommendedSlider').scrollBy(520, 0)">></span>`;
 
                 $(".recommendations").append(string);
             } else {
