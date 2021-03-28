@@ -30,7 +30,7 @@
     }
 
     .charts {
-        width: 100%;
+        width: 80%;
         margin: auto;
         margin-bottom: 20px;
     }
@@ -74,6 +74,12 @@
     .charts {
         width: 100%;
         margin: 0;
+    }
+}
+
+@media only screen and (max-device-width: 600px) {
+    .charts {
+        margin-top: 30px;
     }
 }
 

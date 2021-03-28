@@ -101,6 +101,20 @@
 
         <script>
             getMovie();
+
+            setTimeout(function() {
+
+                $('.arrow-left').hide()
+
+            }, 200)
+
+            $('#imageSlider').addEventListener('scroll', function() {
+                if($('#imageSlider').scrollX > 0) {
+                    $('.arrow-left').show().fadeIn();
+                }
+            })
+
+            
         </script>
     </body>
 </html>

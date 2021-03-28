@@ -151,7 +151,10 @@ function getPerson() {
         </ul>
         `;
 
-            $(".info-left").append(string);
+            setTimeout(function () {
+                $(".info-left").append(string);
+            }, 200)
+            
         })
         .catch((err) => {
             console.log(err);

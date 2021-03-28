@@ -116,7 +116,10 @@ function getMovie() {
                 </div>
             </div>`;
 
-            $(".overview").append(crew);
+            setTimeout(function () {
+                $(".overview").append(crew);
+            }, 200)
+            
         })
         .catch((err) => {
             console.log(err);
@@ -139,7 +142,9 @@ function getMovie() {
 
             string += `
                         <h4 class="images-header">Images</h4>
-                            <ul>`;
+                        <span class="arrow arrow-left" onclick="getElementById('imageSlider').scrollBy(-520, 0)"><</span>
+                            <ul id="imageSlider">`;
+
             for (let i = 0; i <= 5; i++) {
                 string += `<li><img src="https://image.tmdb.org/t/p/w300/${
                     images.backdrops[i].file_path
@@ -149,7 +154,7 @@ function getMovie() {
                                 <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[0].file_path}" onclick="openModal();currentSlide(7)" height="173"></li>
                                 <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[1].file_path}" onclick="openModal();currentSlide(8)" height="173"></li>
                                 <li><img src="https://image.tmdb.org/t/p/w300/${images.posters[2].file_path}" onclick="openModal();currentSlide(9)" height="173"></li>
-                            </ul>
+                            </ul><span class="arrow arrow-right" onclick="getElementById('imageSlider').scrollBy(520, 0)">></span>
                         `;
 
             // create an image gallery

@@ -94,7 +94,7 @@ function getCharts(url, className) {
                     word = "votes";
                 }
 
-                list += `<a onclick="movieSelected(${data.results[i].id})" href='#'><li id="charts-item"><img onlick="movieSelected(${data.results[i].id})" class="charts-poster" src='https://image.tmdb.org/t/p/w200${data.results[i].poster_path}'>`;
+                list += `<a onclick="movieSelected(${data.results[i].id})" href='#'><li id="charts-item"><img onlick="movieSelected(${data.results[i].id})" class="charts-poster" src='https://image.tmdb.org/t/p/w200${data.results[i].poster_path}'></li></a>`;
             }
 
             $(className).append(list);

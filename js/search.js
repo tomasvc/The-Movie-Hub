@@ -12,7 +12,7 @@ function getValue(val) {
     return false;
 }
 
-function getResults(x) {
+function getResults(currentPage) {
     $(".results").html("");
 
     let query = sessionStorage.getItem("query");
@@ -21,19 +21,19 @@ function getResults(x) {
             "https://api.themoviedb.org/3/search/multi?api_key=4f3fdbd8c5943719506e53611dd7be34&language=en-US&query=" +
                 query +
                 "&page=" +
-                x +
+                currentPage +
                 "&include_adult=false"
         )
 
         .then((results) => {
             data = results.data;
-            console.log(data.results)
 
             let string = ``;
             let query_string = `<p class="query">Search results for '${query}'</p>`;
             string += `<ul>`;
             data.results.forEach((el) => {
-                // Change name of function to call based on result type
+
+                // Change name of function to call based on result type, so if media_type is 'movie', select becomes 'movieSelected'
                 let select = "";
                 let date = "";
 
@@ -41,9 +41,13 @@ function getResults(x) {
                     return;
                 }
 
-                // Identify type of result
+                // Identify type of result and select appropriate function to call
                 if (el.media_type == "movie") {
+
                     select = "movieSelected";
+                    if (el.release_date != undefined) {
+                        date = `<span class="item-date">(${el.release_date.substring(0, 4)})</span>`
+                    }
 
                     string += `
                     <li class="results-item">
@@ -63,13 +67,14 @@ function getResults(x) {
                     el.id
                 })" href="#">${
                     el.title || el.original_title
-                }</a><span class="item-date">(${date})</span>
+                }</a><span class="item-date">${date}</span>
                             <p class="item-overview">${el.overview || ""}</p>
                         </div>
                     </li>
                 `;
 
                 } else if (el.media_type == "tv") {
+
                     select = "TVSelected";
 
                     string += `
@@ -90,7 +95,7 @@ function getResults(x) {
                     el.id
                 })" href="#">${
                     el.title || el.original_title
-                }</a><span class="item-date">(${date})</span>
+                }</a><span class="item-date">(${el.date})</span>
                             <p class="item-overview">${el.overview || ""}</p>
                         </div>
                     </li>
@@ -134,23 +139,27 @@ function getResults(x) {
 
             string += `</ul>`;
             string += `<div class="page-nav">`;
-            string += `<p>Page ${data.page} out of ${data.total_pages}</p>`;
 
-            if (x == 1 && data.total_pages > 1) {
-                string += `<a href="#" onclick="getResults(${
-                    x + 1
+            if (currentPage == 1 && data.total_pages > 1) {
+                string += `<p>Page ${data.page} out of ${data.total_pages}</p>
+                <a href="#" onclick="getResults(${
+                    currentPage + 1
                 })">Next page</a>`;
-            } else if (x > 1 && data.total_pages > 1) {
+            } else if (currentPage > 1 && currentPage < data.total_pages) {
                 string += `<a href="#" onclick="getResults(${
-                    x - 1
+                    currentPage - 1
                 })">Previous page</a>`;
+                string += `<p>Page ${data.page} out of ${data.total_pages}</p>`
                 string += `<a href="#" onclick="getResults(${
-                    x + 1
+                    currentPage + 1
                 })">Next page</a>`;
-            } else {
+            } else if (data.total_pages == 1) {
+                string += ``;
+            } else if (currentPage == data.total_pages) {
                 string += `<a href="#" onclick="getResults(${
-                    x - 1
-                })">Previous page</a>`;
+                    currentPage - 1
+                })">Previous page</a>
+                <p>Page ${data.page} out of ${data.total_pages}</p>`;
             }
 
             string += `</div>`;
@@ -159,6 +168,6 @@ function getResults(x) {
             $(".results").append(string);
         })
         .catch((err) => {
-            console.log(err);
+            console.log("Error: Could not get results: ", err);
         });
 }

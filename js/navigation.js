@@ -9,7 +9,8 @@ $((window.addEventListener('resize', () => {
 })))
 
 
-$(".search").click(function () {
+$(".search").click(function (e) {
+    e.preventDefault()
     if ($(window).width() < 550) {
         $(".header").css({ height: "70px" });
         $(".search-area").css({ top: "15px" });
@@ -26,7 +27,8 @@ $(".search").click(function () {
     $("body").addClass("stop-scrolling");
 });
 
-$(".close-search").click(function () {
+$(".close-search").click(function (e) {
+    e.preventDefault()
     if ($(window).width() < 550) {
         $(".header").css({ height: "70px" });
     } else {
