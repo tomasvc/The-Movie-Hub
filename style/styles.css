@@ -837,6 +837,7 @@ img.hover-shadow {
     flex-direction: row;
     padding-left: 0;
     overflow-x: scroll;
+    scroll-behavior: smooth;
 }
 
 .slider ul::-webkit-scrollbar {
