@@ -37,9 +37,9 @@ function getResults(currentPage) {
                 let select = "";
                 let date = "";
 
-                if (el.title == undefined || el.title == null) {
-                    return;
-                }
+                // if (el.title == undefined || el.original_title == undefined || el.name == undefined) {
+                //     return;
+                // }
 
                 // Identify type of result and select appropriate function to call
                 if (el.media_type == "movie") {
@@ -73,9 +73,10 @@ function getResults(currentPage) {
                     </li>
                 `;
 
-                } else if (el.media_type == "tv") {
+                } if (el.media_type == "tv") {
 
                     select = "TVSelected";
+                    date = el.first_air_date.substring(0, 4);
 
                     string += `
                     <li class="results-item">
@@ -87,21 +88,21 @@ function getResults(currentPage) {
                         ? "https://image.tmdb.org/t/p/w200" + el.poster_path
                         : "img/poster-blank.jpg"
                 }" width="200" alt="${
-                    el.title || el.original_title
+                    el.name || el.original_name
                 }"></a>
                         </div>
                         <div class="right">
                             <a class="item-title" onclick="${select}(${
                     el.id
                 })" href="#">${
-                    el.title || el.original_title
-                }</a><span class="item-date">(${el.date})</span>
+                    el.name || el.original_name
+                }</a><span class="item-date">(${date})</span>
                             <p class="item-overview">${el.overview || ""}</p>
                         </div>
                     </li>
                 `;
 
-                } else if (el.media_type == "person") {
+                } if (el.media_type == "person") {
 
                     select = "personSelected";
 

@@ -39,7 +39,7 @@ function getTV() {
 
             string += `
                         <div class="details-left">
-                            <img class="img-responsive" src="${
+                            <img id="poster" class="img-responsive" src="${
                                 tv.poster_path != undefined
                                     ? "https://image.tmdb.org/t/p/w400" +
                                       tv.poster_path
